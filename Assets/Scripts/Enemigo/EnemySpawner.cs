@@ -37,7 +37,7 @@ public class EnemySpawner : MonoBehaviour
     {
         GameObject go = Instantiate(enemyInstance, transform.position, Quaternion.identity);
         go.GetComponent<EnemyMovement>().playerTransform = playerTransform;
-        go.GetComponent<EnemyStats>().spawner = this;
+        go.GetComponent<EnemyHealth>().spawner = this;
         currentEnemyCount++;
     }
 

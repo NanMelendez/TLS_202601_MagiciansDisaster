@@ -246,6 +246,7 @@ GameObject:
   - component: {fileID: 7427955205983617821}
   - component: {fileID: 2997655176272192833}
   - component: {fileID: 8372310320297542704}
+  - component: {fileID: 1406507150407958666}
   m_Layer: 3
   m_Name: Enemigo
   m_TagString: Enemigo
@@ -374,3 +375,17 @@ MonoBehaviour:
   enemySprite: {fileID: 213062436300578303}
   colorOnHit: {r: 1, g: 0, b: 0, a: 1}
   damagedCooldown: 0.25
+  eKnockback: {fileID: 1406507150407958666}
+--- !u!114 &1406507150407958666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8958714086716530497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eaa1d6b7c3cff4428042000995e0917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyKnockback
+  rb2d: {fileID: 8327109801471042521}

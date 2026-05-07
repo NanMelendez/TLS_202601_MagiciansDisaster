@@ -9,32 +9,37 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb2d;
     [SerializeField]
     private InputActionReference inputMovement;
+    [SerializeField]
+    private InputActionReference inputMouse;
     private Vector2 dirMovement;
-    private Vector2 lastDirection;
+    private Vector2 dirAim;
 
     // Importante: ¡Crear la referencia al InputAction aquí!
     void Awake()
     {
-        lastDirection = new Vector2(0.0f, -1.0f); // Por defecto el jugador apunta abajo
+        dirAim = new Vector2(1.0f, 0.0f);
     }
 
     // Importante: ¡Siempre activar dicha referencia aquí!
     void OnEnable()
     {
         inputMovement.action.Enable();
+        inputMouse.action.Enable();
     }
 
     // Importante: ¡Siempre desactivar dicha referencia aquí!
     void OnDisable()
     {
         inputMovement.action.Disable();
+        inputMouse.action.Disable();
     }
     
     void Update()
     {
         dirMovement = inputMovement.action.ReadValue<Vector2>();
-        if (dirMovement.magnitude != 0.0)
-            lastDirection = dirMovement;
+        Vector2 mousePos = Mouse.current.position.ReadValue();
+        Vector2 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+        dirAim = (mousePos - screenPos).normalized;
     }
 
     void FixedUpdate()
@@ -42,8 +47,8 @@ public class PlayerMovement : MonoBehaviour
         rb2d.linearVelocity = dirMovement * speed;
     }
 
-    public Vector2 LastDirection
+    public Vector2 AimDirection
     {
-        get { return lastDirection; }
+        get { return dirAim; }
     }
 }

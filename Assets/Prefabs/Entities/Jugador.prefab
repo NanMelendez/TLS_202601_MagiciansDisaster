@@ -58,7 +58,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 649674da84bdfe04c892c3c7a0c8aff3, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -81,8 +81,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0.9547169, b: 0.93092424, a: 1}
+  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Color: {r: 0.46898976, g: 1, b: 0.4584905, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -104,8 +104,11 @@ GameObject:
   - component: {fileID: 1851541527984684001}
   - component: {fileID: 1484618890719926277}
   - component: {fileID: 9145713949371895918}
-  - component: {fileID: 1472037098746389154}
   - component: {fileID: 4027878133967370508}
+  - component: {fileID: 4720115874745811342}
+  - component: {fileID: 5052975549047490026}
+  - component: {fileID: 517754634452053967}
+  - component: {fileID: 8194426765533488630}
   m_Layer: 6
   m_Name: Jugador
   m_TagString: Player
@@ -218,6 +221,7 @@ MonoBehaviour:
   speed: 5
   rb2d: {fileID: 7302834455151481782}
   inputMovement: {fileID: -1624035036458952916, guid: a05ac7d2e620d9340b433052bb27955a, type: 3}
+  inputMouse: {fileID: 3352945536699034300, guid: a05ac7d2e620d9340b433052bb27955a, type: 3}
 --- !u!114 &9145713949371895918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,22 +240,6 @@ MonoBehaviour:
   playerSpriteTransform: {fileID: 2322704550683747826}
   transformShadow: {fileID: 7247592928032134052}
   inputJump: {fileID: -7966292231788451526, guid: a05ac7d2e620d9340b433052bb27955a, type: 3}
---- !u!114 &1472037098746389154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6663048356104040985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c8b7879f94425347b3355ce28f89738, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  abilityPrimary: {fileID: 11400000, guid: 414e2d166e6a39746bb46f016237a314, type: 2}
-  abilitySecondary: {fileID: 11400000, guid: 463eebfa8bfa1644ea259eca37458126, type: 2}
-  attackActionPrimary: {fileID: -4012214695325261910, guid: a05ac7d2e620d9340b433052bb27955a, type: 3}
-  attackActionSecondary: {fileID: 4367953147965349397, guid: a05ac7d2e620d9340b433052bb27955a, type: 3}
 --- !u!114 &4027878133967370508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,6 +254,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
   maxHealth: 100
   maxHurtCooldown: 1.5
+--- !u!114 &4720115874745811342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6663048356104040985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c57b02cdd64b94fa632ace874fdd2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColoredFlash
+  spriteRenderer: {fileID: 5467363417721606698}
+  flashMaterial: {fileID: 2100000, guid: b6c2e6d56c6a45c4989ffa91ad15b352, type: 2}
+  duration: 0.125
+--- !u!114 &5052975549047490026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6663048356104040985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 149d7b36065be3e40b5d3717527f5713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlashController
+  flashEffect: {fileID: 4720115874745811342}
+  flashColor: {r: 1, g: 0, b: 0, a: 0}
+--- !u!114 &517754634452053967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6663048356104040985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4992643934b6d004f92ebb4d3e6dccad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrimaryAbilityHolder
+  ability: {fileID: 11400000, guid: 414e2d166e6a39746bb46f016237a314, type: 2}
+  activateAction: {fileID: -4012214695325261910, guid: a05ac7d2e620d9340b433052bb27955a, type: 3}
+--- !u!114 &8194426765533488630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6663048356104040985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76455189354ae1a44816da6ba8044486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SecondaryAbilityHolder
+  ability: {fileID: 11400000, guid: 463eebfa8bfa1644ea259eca37458126, type: 2}
+  activateAction: {fileID: 4367953147965349397, guid: a05ac7d2e620d9340b433052bb27955a, type: 3}
 --- !u!1 &6682278646388824278
 GameObject:
   m_ObjectHideFlags: 0

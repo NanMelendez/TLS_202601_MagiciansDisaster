@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     [SerializeField]
     private int maxHealth;
@@ -21,7 +21,7 @@ public class PlayerStats : MonoBehaviour
     {
         if (collision.CompareTag("Enemigo") && hurtCooldown <= 0)
         {
-            int dmg = collision.gameObject.transform.parent.gameObject.GetComponent<EnemyStats>().Damage;
+            int dmg = collision.gameObject.transform.parent.gameObject.GetComponent<EnemyHealth>().Damage;
             TakeDamage(dmg);
             Debug.Log($"Salud jugador: {health}");
             hurtCooldown = maxHurtCooldown;

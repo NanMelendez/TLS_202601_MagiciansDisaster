@@ -2,11 +2,10 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class EnemyStats : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     [SerializeField]
     private int maxHealth;
-    private int health;
     [SerializeField]
     private int damage;
     [SerializeField]
@@ -15,9 +14,13 @@ public class EnemyStats : MonoBehaviour
     private Color colorOnHit;
     [SerializeField]
     private float damagedCooldown;
+    [SerializeField]
+    private EnemyKnockback eKnockback;
     private EnemyMovement movement;
     [NonSerialized]
     public EnemySpawner spawner;
+
+    private int health;
     private Color defaultColor;
     private float damagedTimer;
     private bool deathSignalSent;
@@ -40,14 +43,14 @@ public class EnemyStats : MonoBehaviour
             {
                 int dmg = collision.gameObject.GetComponent<MeleeArea>().damage;
                 TakeDamage(dmg);
-                movement.Knockback(100);
+                eKnockback.Knockback(collision.transform, 30);
                 // Debug.Log($"Salud enemigo: {health}");
             }
             if (collision.CompareTag("Pellet"))
             {
                 int dmg = collision.gameObject.GetComponent<Pellet>().damage;
                 TakeDamage(dmg);
-                movement.Knockback(30);
+                eKnockback.Knockback(collision.transform, 15);
                 // Debug.Log($"Salud enemigo: {health}");
             }
         }

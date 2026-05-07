@@ -25,13 +25,6 @@ public class EnemyMovement : MonoBehaviour
     {
         if (!shouldStopMoving)
             rb2d.linearVelocity = followDir * speed;
-        else
-            rb2d.linearVelocity = new Vector2(0.0f, 0.0f);
-    }
-
-    public void Knockback(float strength)
-    {
-        rb2d.AddForce(rb2d.linearVelocity.normalized * -strength);
     }
 
     internal void ApllySlow(float slowFactor, float slowDuration)

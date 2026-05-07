@@ -59,6 +59,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Apuntar",
+                    "type": "Value",
+                    "id": "9384bb14-8182-403e-985f-1254373fbd37",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -163,34 +172,12 @@
                 },
                 {
                     "name": "",
-                    "id": "ae9f28a9-7271-4405-b790-d333d3c84b91",
-                    "path": "<Keyboard>/z",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Ataque Primario",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "924064c8-3da3-4ee7-a4a0-b601c236b610",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Ataque Primario",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "12cb5417-922c-4597-b033-a7cb98f5d403",
-                    "path": "<Keyboard>/x",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Ataque Secundario",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -208,7 +195,7 @@
                 {
                     "name": "",
                     "id": "0840d480-6703-426f-834b-e3c7adcfde3e",
-                    "path": "<Keyboard>/c",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -235,6 +222,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Inventario",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "83c4037d-7c8e-40d2-8306-4c9bbfbc15fc",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Apuntar",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
