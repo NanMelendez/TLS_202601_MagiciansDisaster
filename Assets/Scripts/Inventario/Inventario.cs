@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public class Inventario : MonoBehaviour
 {
@@ -43,5 +44,10 @@ public class Inventario : MonoBehaviour
         {
             Debug.Log(item.NombreDeItem + "x" + item.cantidad);
         }
+    }
+
+    internal void OcultarInventario()
+    {
+        throw new NotImplementedException();
     }
 }

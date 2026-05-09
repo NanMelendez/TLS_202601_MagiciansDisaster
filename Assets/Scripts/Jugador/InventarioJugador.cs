@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -26,17 +27,24 @@ public class InventarioJugador : MonoBehaviour
         inventario.AñadirItem("Baston mejorado", null, 1);
 
         inventario.MostrarInventario();
+       
     }
 
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+       if(Input.GetKeyDown(KeyCode.I))
         {
             inventario.MostrarInventario();
         }
-
+        else
+        {
+            
+            inventario.OcultarInventario();
+        }
+       
       
-        
     }
+   
+    
 }
