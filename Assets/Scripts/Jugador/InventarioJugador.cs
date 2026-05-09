@@ -14,12 +14,20 @@ public class InventarioJugador : MonoBehaviour
 
     private void OnEnable()
     {
-        InputInventario.action.Enable();
+        if (InputInventario != null && InputInventario.action != null)
+        {
+            InputInventario.action.performed += OnToggleInventario;
+            InputInventario.action.Enable();
+        }
     }
 
     private void OnDisable()
     {
-        InputInventario.action.Disable();
+        if (InputInventario != null && InputInventario.action != null)
+        {
+            InputInventario.action.performed -= OnToggleInventario;
+            InputInventario.action.Disable();
+        }
     }
     private void Start()
     {
@@ -35,16 +43,27 @@ public class InventarioJugador : MonoBehaviour
     {
        if(Input.GetKeyDown(KeyCode.I))
         {
-            inventario.MostrarInventario();
+            // Alternativa directa por teclado sin usar InputActionReference:
+            if (inventario.gameObject.activeSelf)
+            {
+                inventario.OcultarInventario();
+            }
+            else
+            {
+                inventario.MostrarInventario();
+            }
+        }       
+    }
+   
+    private void OnToggleInventario(InputAction.CallbackContext ctx)
+    {
+        if (inventario.gameObject.activeSelf)
+        {
+            inventario.OcultarInventario();
         }
         else
         {
-            
-            inventario.OcultarInventario();
+            inventario.MostrarInventario();
         }
-       
-      
-    }
-   
-    
+    }   
 }
