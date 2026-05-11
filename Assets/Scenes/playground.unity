@@ -407,6 +407,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1970377636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1970377638}
+  - component: {fileID: 1970377637}
+  m_Layer: 0
+  m_Name: ItemInventario
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1970377637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970377636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b885642eb0559448a51f540a914cf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemInventario
+  NombreDeItem: 
+  icono: {fileID: 0}
+  cantidad: 0
+--- !u!4 &1970377638
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970377636}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.338466, y: -0.80707955, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2098873209
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,6 +712,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 599fdb978940d8940be25392d2d02a0f, type: 3}
+--- !u!1001 &5639891428606430907
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3656690962981550309, guid: 1c0fd378b1ef36b4296f91f6a6182c26, type: 3}
+      propertyPath: m_Name
+      value: Inventario
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210935998137716922, guid: 1c0fd378b1ef36b4296f91f6a6182c26, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12.705716
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210935998137716922, guid: 1c0fd378b1ef36b4296f91f6a6182c26, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.7769488
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210935998137716922, guid: 1c0fd378b1ef36b4296f91f6a6182c26, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210935998137716922, guid: 1c0fd378b1ef36b4296f91f6a6182c26, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210935998137716922, guid: 1c0fd378b1ef36b4296f91f6a6182c26, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210935998137716922, guid: 1c0fd378b1ef36b4296f91f6a6182c26, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210935998137716922, guid: 1c0fd378b1ef36b4296f91f6a6182c26, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210935998137716922, guid: 1c0fd378b1ef36b4296f91f6a6182c26, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210935998137716922, guid: 1c0fd378b1ef36b4296f91f6a6182c26, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210935998137716922, guid: 1c0fd378b1ef36b4296f91f6a6182c26, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1c0fd378b1ef36b4296f91f6a6182c26, type: 3}
 --- !u!1001 &7101896422554531127
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -742,7 +846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 422fdb03d382b5f44b8512f95fbcb31f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventarioJugador
-  inventario: {fileID: 0}
+  inventario: {fileID: -1525974484941639258, guid: 1c0fd378b1ef36b4296f91f6a6182c26, type: 3}
 --- !u!1001 &8005047226505448728
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -941,3 +1045,5 @@ SceneRoots:
   - {fileID: 5190264492238595768}
   - {fileID: 117856457}
   - {fileID: 2098873212}
+  - {fileID: 1970377638}
+  - {fileID: 5639891428606430907}
