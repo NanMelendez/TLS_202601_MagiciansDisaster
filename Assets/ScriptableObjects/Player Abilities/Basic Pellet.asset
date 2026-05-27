@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4292149b319cb94fb0a21840b6e08f2, type: 3}
+  m_Name: Basic Pellet
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAtkRanged
+  name: Basic Pellet 1
+  cooldownTime: 0.1
+  activeTime: 0.1
+  manaCost: 2
+  damage: 20
+  projectile: {fileID: 942468747175027456, guid: f137ed5af0b54b24999ea0832400c5d9, type: 3}
+  speed: 10
+  lifetime: 2.5
+  spawnOffset: 1.5

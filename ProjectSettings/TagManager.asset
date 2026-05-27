@@ -4,20 +4,18 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Suelo
-  - Enemigo
-  - PlayerAttack
-  - MeleeArea
-  - Pellet
+  - Enemy
+  - PlayerProjectile
+  - EnemyDetectionArea
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Enemigo
+  - Player
   - Water
   - UI
-  - Jugador
-  - Muros
+  - Enemy
+  - Wall
   - 
   - 
   - 
