@@ -55,6 +55,7 @@ public class ControladorParticulas : MonoBehaviour
             Destroy(gameObject);
             Debug.Log("Objeto de particulas eliminado");
         }
+       
     }
 }
             
