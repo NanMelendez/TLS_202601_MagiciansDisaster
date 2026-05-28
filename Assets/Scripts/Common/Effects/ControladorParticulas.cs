@@ -20,6 +20,7 @@ public class ControladorParticulas : MonoBehaviour
     }
     private void Start()
     {
+        
         if (reproducirAlInicio && sistemaParticulas != null)
         {
             IniciarEfecto();
