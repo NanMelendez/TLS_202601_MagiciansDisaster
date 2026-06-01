@@ -12,10 +12,17 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private float destroyAfterSeconds;
 
 	private bool isAlive;
+	private int points;
+
+	public int Points
+	{
+		get { return points; }
+	}
 
 	private void Awake()
 	{
 		isAlive = true;
+		points = 0;
 	}
 
 	private void Update()
@@ -51,5 +58,10 @@ public class PlayerController : MonoBehaviour
 	void ApplyKnockback()
 	{
 		knockback.Execute(movement.Direction, 50.0f);
+	}
+
+	public void AddPoints(int amount)
+	{
+		points += amount;
 	}
 }
