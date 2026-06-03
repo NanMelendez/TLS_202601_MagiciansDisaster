@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
 			flashController.Flash();
 			collision.gameObject.CompareTag("Enemy");
 			GameManager.instance.PerderVida();
+			gameObject.SetActive(false);
 		}
 	}
 
