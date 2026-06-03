@@ -43,6 +43,8 @@ public class PlayerController : MonoBehaviour
 			StartCoroutine(AllowKnocback(health.HurtCooldown));
 			Invoke(nameof(ApplyKnockback), 0.02f);
 			flashController.Flash();
+			collision.gameObject.CompareTag("Enemy");
+			GameManager.instance.PerderVida();
 		}
 	}
 
@@ -64,4 +66,6 @@ public class PlayerController : MonoBehaviour
 	{
 		points += amount;
 	}
+
+    
 }
