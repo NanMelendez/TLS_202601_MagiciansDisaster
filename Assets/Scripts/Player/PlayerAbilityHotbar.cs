@@ -8,6 +8,7 @@ public class PlayerAbilityHotbar : MonoBehaviour
 	[SerializeField] private PlayerMana mana;
 	[SerializeField] private InputActionReference activator;
 	[SerializeField] private List<Ability> abilities;
+	[SerializeField] private UIAbilityHotbar UIHotbar;
 
 	private int currentAbilityIdx = 0;
 	private List<AbilityState> states;
@@ -17,6 +18,11 @@ public class PlayerAbilityHotbar : MonoBehaviour
 	public int CurrentAbilityIdx
 	{
 		get { return currentAbilityIdx; }
+	}
+
+	public int AbilityCount
+	{
+		get { return abilities.Count; }
 	}
 
 	private void Awake()
