@@ -51,6 +51,11 @@ public class PlayerAbilityHotbar : MonoBehaviour
 			UpdateAbilitiesStatus(activator.action.IsPressed());
 	}
 
+	public bool PressedActivator
+	{
+		get { return activator.action.IsPressed(); }
+	}
+
 	private void ControlScroll()
 	{
 		Vector2 scrollDelta = Mouse.current.scroll.ReadValue();

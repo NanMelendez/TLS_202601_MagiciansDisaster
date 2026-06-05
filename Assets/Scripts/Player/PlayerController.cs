@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,10 +10,17 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private Knockback knockback;
 	[SerializeField] private PlayerMana mana;
 	[SerializeField] private FlashController flashController;
+	[SerializeField] private PlayerAbilityHotbar hotbar;
 	[SerializeField] private float destroyAfterSeconds;
+	[SerializeField] private Animator spriteAnimator;
 
 	private bool isAlive;
 	private int points;
+
+	private bool prevMovementState = false;
+
+	private static readonly int AnimIdleHash = Animator.StringToHash("idle");
+	private static readonly int AnimDirectionHash = Animator.StringToHash("direction");
 
 	public int Points
 	{
@@ -32,6 +40,8 @@ public class PlayerController : MonoBehaviour
 			Destroy(gameObject, destroyAfterSeconds);
 			isAlive = false;
 		}
+
+		HandleAnimator();
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
@@ -67,5 +77,40 @@ public class PlayerController : MonoBehaviour
 		points += amount;
 	}
 
-    
+	private void HandleAnimator()
+	{
+		HandleAnimDirection();
+		HandleAnimState();
+	}
+
+	private void HandleAnimDirection()
+	{
+		if (movement.IsMoving)
+		{
+			switch (movement.LastKeyPressed)
+			{
+				case Key.S:
+					spriteAnimator.SetInteger(AnimDirectionHash, 0);
+					break;
+				case Key.W:
+					spriteAnimator.SetInteger(AnimDirectionHash, 1);
+					break;
+				case Key.A:
+					spriteAnimator.SetInteger(AnimDirectionHash, 2);
+					break;
+				case Key.D:
+					spriteAnimator.SetInteger(AnimDirectionHash, 3);
+					break;
+			}
+		}
+	}
+
+	private void HandleAnimState()
+	{
+		if (movement.IsMoving != prevMovementState)
+		{
+			spriteAnimator.SetBool(AnimIdleHash, !movement.IsMoving);
+			prevMovementState = movement.IsMoving;
+		}
+	}
 }
