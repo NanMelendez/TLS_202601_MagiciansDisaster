@@ -43,9 +43,8 @@ public class PlayerController : MonoBehaviour
 			StartCoroutine(AllowKnocback(health.HurtCooldown));
 			Invoke(nameof(ApplyKnockback), 0.02f);
 			flashController.Flash();
-			collision.gameObject.CompareTag("Enemy");
-			GameManager.instance.PerderVida();
-			gameObject.SetActive(false);
+
+			Debug.Log($"¡TMRE ME HIRIERON, -{ec.contactDamage} PINCHES PUNTOS!");
 		}
 	}
 
