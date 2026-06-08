@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
 	private static readonly int AnimIdleHash = Animator.StringToHash("idle");
 	private static readonly int AnimDirectionHash = Animator.StringToHash("direction");
 
+	private float movX, movY;
+
 	public int Points
 	{
 		get { return points; }
@@ -40,6 +42,12 @@ public class PlayerController : MonoBehaviour
 			Destroy(gameObject, destroyAfterSeconds);
 			isAlive = false;
 		}
+
+		movX = Input.GetAxisRaw("Horizontal");
+		movY = Input.GetAxisRaw("Vertical");
+
+		spriteAnimator.SetFloat("MovX", movX);
+		spriteAnimator.SetFloat("MovY", movY);
 
 		HandleAnimator();
 	}
