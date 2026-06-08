@@ -25,6 +25,11 @@ public class PlayerAbilityHotbar : MonoBehaviour
 		get { return abilities.Count; }
 	}
 
+	public bool IsAttacking
+	{
+		get { return activator ? activator.action.IsPressed() : false; }
+	}
+
 	private void Awake()
 	{
 		states = Enumerable.Repeat(AbilityState.READY, abilities.Count).ToList();
@@ -49,11 +54,6 @@ public class PlayerAbilityHotbar : MonoBehaviour
 		ControlScroll();
 		if (activator)
 			UpdateAbilitiesStatus(activator.action.IsPressed());
-	}
-
-	public bool PressedActivator
-	{
-		get { return activator.action.IsPressed(); }
 	}
 
 	private void ControlScroll()

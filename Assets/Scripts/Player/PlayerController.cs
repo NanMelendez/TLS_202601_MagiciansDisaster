@@ -18,11 +18,12 @@ public class PlayerController : MonoBehaviour
 	private int points;
 
 	private bool prevMovementState = false;
+	private bool prevAttackState = false;
 
 	private static readonly int AnimIdleHash = Animator.StringToHash("idle");
-	private static readonly int AnimDirectionHash = Animator.StringToHash("direction");
-
-	private float movX, movY;
+	private static readonly int AnimMovXHash = Animator.StringToHash("movX");
+	private static readonly int AnimMovYHash = Animator.StringToHash("movY");
+	private static readonly int AnimAttackingHash = Animator.StringToHash("attacking");
 
 	public int Points
 	{
@@ -42,12 +43,6 @@ public class PlayerController : MonoBehaviour
 			Destroy(gameObject, destroyAfterSeconds);
 			isAlive = false;
 		}
-
-		movX = Input.GetAxisRaw("Horizontal");
-		movY = Input.GetAxisRaw("Vertical");
-
-		spriteAnimator.SetFloat("MovX", movX);
-		spriteAnimator.SetFloat("MovY", movY);
 
 		HandleAnimator();
 	}
@@ -93,24 +88,8 @@ public class PlayerController : MonoBehaviour
 
 	private void HandleAnimDirection()
 	{
-		if (movement.IsMoving)
-		{
-			switch (movement.LastKeyPressed)
-			{
-				case Key.S:
-					spriteAnimator.SetInteger(AnimDirectionHash, 0);
-					break;
-				case Key.W:
-					spriteAnimator.SetInteger(AnimDirectionHash, 1);
-					break;
-				case Key.A:
-					spriteAnimator.SetInteger(AnimDirectionHash, 2);
-					break;
-				case Key.D:
-					spriteAnimator.SetInteger(AnimDirectionHash, 3);
-					break;
-			}
-		}
+		spriteAnimator.SetFloat(AnimMovXHash, movement.Direction.x);
+		spriteAnimator.SetFloat(AnimMovYHash, movement.Direction.y);
 	}
 
 	private void HandleAnimState()
@@ -119,6 +98,12 @@ public class PlayerController : MonoBehaviour
 		{
 			spriteAnimator.SetBool(AnimIdleHash, !movement.IsMoving);
 			prevMovementState = movement.IsMoving;
+		}
+
+		if (hotbar.IsAttacking != prevAttackState)
+		{
+			spriteAnimator.SetBool(AnimAttackingHash, hotbar.IsAttacking);
+			prevAttackState = hotbar.IsAttacking;
 		}
 	}
 }
