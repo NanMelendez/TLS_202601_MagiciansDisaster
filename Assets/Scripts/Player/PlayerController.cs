@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private PlayerMovement movement;
 	[SerializeField] private PlayerAim aim;
 	[SerializeField] private Health health;
+	[SerializeField] private Score score;
 	[SerializeField] private Knockback knockback;
 	[SerializeField] private PlayerMana mana;
 	[SerializeField] private FlashController flashController;
@@ -15,7 +16,6 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private Animator spriteAnimator;
 
 	private bool isAlive;
-	private int points;
 
 	private bool prevMovementState = false;
 	private bool prevAttackState = false;
@@ -25,15 +25,9 @@ public class PlayerController : MonoBehaviour
 	private static readonly int AnimMovYHash = Animator.StringToHash("movY");
 	private static readonly int AnimAttackingHash = Animator.StringToHash("attacking");
 
-	public int Points
-	{
-		get { return points; }
-	}
-
 	private void Awake()
 	{
 		isAlive = true;
-		points = 0;
 	}
 
 	private void Update()
@@ -75,11 +69,6 @@ public class PlayerController : MonoBehaviour
 		knockback.Execute(movement.Direction, 50.0f);
 	}
 
-	public void AddPoints(int amount)
-	{
-		points += amount;
-	}
-
 	private void HandleAnimator()
 	{
 		HandleAnimDirection();
@@ -88,8 +77,11 @@ public class PlayerController : MonoBehaviour
 
 	private void HandleAnimDirection()
 	{
-		spriteAnimator.SetFloat(AnimMovXHash, movement.Direction.x);
-		spriteAnimator.SetFloat(AnimMovYHash, movement.Direction.y);
+		if (movement.IsMoving)
+		{
+			spriteAnimator.SetFloat(AnimMovXHash, movement.Direction.x);
+			spriteAnimator.SetFloat(AnimMovYHash, movement.Direction.y);
+		}
 	}
 
 	private void HandleAnimState()

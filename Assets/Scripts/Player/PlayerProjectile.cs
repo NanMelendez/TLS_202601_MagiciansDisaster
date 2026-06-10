@@ -4,12 +4,15 @@ using UnityEngine;
 public class PlayerProjectile : MonoBehaviour
 {
 	[SerializeField] private Rigidbody2D rb2d;
+	[SerializeField] private Animator animator;
 
 	private int damage;
 
+	private static readonly int AnimChargedHash = Animator.StringToHash("charged");
+
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (!collision.CompareTag("EnemyDetectionArea"))
+		if (!collision.CompareTag("Spawner"))
 			Destroy(gameObject);
 	}
 
@@ -18,10 +21,11 @@ public class PlayerProjectile : MonoBehaviour
 		get { return damage; }
 	}
 
-	public void Init(int damage, float lifetime, Vector2 direction, float speed)
+	public void Init(int damage, float lifetime, Vector2 direction, float speed, bool charged)
 	{
 		this.damage = damage;
 		rb2d.linearVelocity = direction * speed;
 		Destroy(gameObject, lifetime);
+		animator.SetFloat(AnimChargedHash, charged ? 1.0f : 0.0f);
 	}
 }

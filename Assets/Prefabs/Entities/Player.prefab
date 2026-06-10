@@ -145,6 +145,7 @@ MonoBehaviour:
   movement: {fileID: 8478675964179521000}
   aim: {fileID: 3778772916964512100}
   health: {fileID: 7173295958159671596}
+  score: {fileID: 0}
   knockback: {fileID: 6733510732125508942}
   mana: {fileID: 8141856140077509747}
   flashController: {fileID: 5358694823757467932}
@@ -248,6 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAbilityHotbar
   mana: {fileID: 8141856140077509747}
   activator: {fileID: -2046310171536246835, guid: c5c8837423788ee45a19bb855722cf56, type: 3}
+  charger: {fileID: -6624921261968273137, guid: c5c8837423788ee45a19bb855722cf56, type: 3}
   abilities:
   - {fileID: 11400000, guid: 82dc07257766e1f4e820b1852098b88b, type: 2}
   UIHotbar: {fileID: 0}

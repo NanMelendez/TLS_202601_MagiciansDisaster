@@ -8,6 +8,7 @@ TagManager:
   - PlayerProjectile
   - EnemyDetectionArea
   - Coin
+  - Spawner
   layers:
   - Default
   - TransparentFX

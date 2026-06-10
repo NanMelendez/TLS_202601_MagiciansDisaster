@@ -31,7 +31,7 @@ public class Pickup : MonoBehaviour
 			switch (type)
 			{
 				case PickupType.Coin:
-					player.AddPoints(points);
+					player.GetComponent<Score>().IncrementScore(points);
 					break;
 				case PickupType.Health:
 					player.GetComponent<Health>().Heal(points);

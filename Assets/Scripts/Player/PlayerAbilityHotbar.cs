@@ -7,13 +7,17 @@ public class PlayerAbilityHotbar : MonoBehaviour
 {
 	[SerializeField] private PlayerMana mana;
 	[SerializeField] private InputActionReference activator;
+	[SerializeField] private InputActionReference charger;
 	[SerializeField] private List<Ability> abilities;
 	[SerializeField] private UIAbilityHotbar UIHotbar;
+	[SerializeField] private float chargeThreshold;
 
 	private int currentAbilityIdx = 0;
 	private List<AbilityState> states;
 	private List<float> activeTimes;
 	private List<float> cooldownTimes;
+
+	private float chargeTime;
 
 	public int CurrentAbilityIdx
 	{
@@ -52,6 +56,8 @@ public class PlayerAbilityHotbar : MonoBehaviour
 	private void Update()
 	{
 		ControlScroll();
+		if (charger)
+			ChargeAttackHandler(charger.action.IsPressed());
 		if (activator)
 			UpdateAbilitiesStatus(activator.action.IsPressed());
 	}
@@ -66,12 +72,14 @@ public class PlayerAbilityHotbar : MonoBehaviour
 			currentAbilityIdx++;
 			if (currentAbilityIdx >= abilities.Count)
 				currentAbilityIdx = 0;
+			chargeTime = 0.0f;
 		}
 		else if (scrollY < 0.0f)
 		{
 			currentAbilityIdx--;
 			if (currentAbilityIdx < 0)
 				currentAbilityIdx = abilities.Count - 1;
+			chargeTime = 0.0f;
 		}
 
 		if (scrollY != 0.0f)
@@ -112,12 +120,20 @@ public class PlayerAbilityHotbar : MonoBehaviour
 	{
 		if (mana.CurrentMana - abilities[i].manaCost > 0)
 		{
-			abilities[i].Activate(gameObject);
+			abilities[i].Activate(gameObject, chargeTime >= chargeThreshold);
 			states[i] = AbilityState.ACTIVE;
 			activeTimes[i] = abilities[i].activeTime;
 			mana.ConsumeMana(abilities[i].manaCost);
 		}
 		else
 			Debug.Log("Not enough mana!");
+	}
+
+	private void ChargeAttackHandler(bool isPressed)
+	{
+		if (isPressed)
+			chargeTime += Time.deltaTime;
+		else
+			chargeTime = 0.0f;
 	}
 }

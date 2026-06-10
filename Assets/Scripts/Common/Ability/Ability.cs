@@ -8,7 +8,7 @@ public class Ability : ScriptableObject
     public float activeTime;
     public int manaCost;
 
-    public virtual void Activate(GameObject parent) { }
+    public virtual void Activate(GameObject parent, bool charged) { }
 
     public virtual void BeginCooldown(GameObject parent) { }
 }
