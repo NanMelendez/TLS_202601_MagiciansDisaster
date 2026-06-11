@@ -23,6 +23,8 @@ public class PlayerProjectile : MonoBehaviour
 
 	public void Init(int damage, float lifetime, Vector2 direction, float speed, bool charged)
 	{
+		if (charged)
+			transform.localScale = Vector3.one * 2.5f;
 		this.damage = damage;
 		rb2d.linearVelocity = direction * speed;
 		Destroy(gameObject, lifetime);

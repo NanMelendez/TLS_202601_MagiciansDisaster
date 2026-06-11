@@ -104,7 +104,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.27}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -114,7 +114,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!114 &4015071952851868858
 MonoBehaviour:
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShadowPlacer
   distance: 0.5
-  scale: {x: 1, y: 1}
+  scale: {x: 0.65, y: 0.65}
 --- !u!114 &1989442114768149440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed12eb85c87573944ba91ffcd68f4308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMana
-  maxMana: 50
+  maxMana: 100
 --- !u!114 &8580527357646141192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,7 +252,9 @@ MonoBehaviour:
   charger: {fileID: -6624921261968273137, guid: c5c8837423788ee45a19bb855722cf56, type: 3}
   abilities:
   - {fileID: 11400000, guid: 82dc07257766e1f4e820b1852098b88b, type: 2}
+  - {fileID: 11400000, guid: 82202179e8bde5c479bf70bb70b8df52, type: 2}
   UIHotbar: {fileID: 0}
+  chargeThreshold: 5
 --- !u!1 &8967553314854099617
 GameObject:
   m_ObjectHideFlags: 0
