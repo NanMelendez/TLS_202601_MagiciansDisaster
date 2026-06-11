@@ -11,6 +11,7 @@ public class PlayerAbilityHotbar : MonoBehaviour
 	[SerializeField] private List<Ability> abilities;
 	[SerializeField] private UIAbilityHotbar UIHotbar;
 	[SerializeField] private float chargeThreshold;
+	[SerializeField] private UIStatsHandler UIHandler;
 
 	private int currentAbilityIdx = 0;
 	private List<AbilityState> states;
@@ -39,7 +40,7 @@ public class PlayerAbilityHotbar : MonoBehaviour
 		states = Enumerable.Repeat(AbilityState.READY, abilities.Count).ToList();
 		activeTimes = Enumerable.Repeat(0.0f, abilities.Count).ToList();
 		cooldownTimes = Enumerable.Repeat(0.0f, abilities.Count).ToList();
-	}
+    }
 
 	private void OnEnable()
 	{
@@ -124,6 +125,7 @@ public class PlayerAbilityHotbar : MonoBehaviour
 			states[i] = AbilityState.ACTIVE;
 			activeTimes[i] = abilities[i].activeTime;
 			mana.ConsumeMana(abilities[i].manaCost);
+			UIHandler.UpdateMana(mana.CurrentMana, mana.MaxMana);
 		}
 		else
 			Debug.Log("Not enough mana!");

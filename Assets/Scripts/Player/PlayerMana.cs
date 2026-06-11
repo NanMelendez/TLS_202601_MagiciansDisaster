@@ -16,7 +16,13 @@ public class PlayerMana : MonoBehaviour
 		get { return currentMana; }
 	}
 
-	public void ConsumeMana(int amount)
+    private void Awake()
+    {
+        maxMana = Mathf.Max(maxMana, 1);
+        currentMana = maxMana;
+    }
+
+    public void ConsumeMana(int amount)
 	{
 		currentMana = Mathf.Max(currentMana - amount, 0);
 	}
@@ -24,11 +30,5 @@ public class PlayerMana : MonoBehaviour
 	public void AcquireMana(int amount)
 	{
 		currentMana = Mathf.Min(currentMana + amount, maxMana);
-	}
-
-	private void Awake()
-	{
-		maxMana = Mathf.Max(maxMana, 1);
-		currentMana = maxMana;
 	}
 }

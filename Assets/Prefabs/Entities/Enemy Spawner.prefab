@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   enemyInstance: {fileID: 6670262877560284828, guid: 6793537e2bf87dc46ab0fed80df75d7b, type: 3}
   spawnCooldown: 0.75
-  enemyLimit: -1
+  enemyLimit: 10
   spawnRadius: 5
 --- !u!1 &6663519877173422924
 GameObject:
