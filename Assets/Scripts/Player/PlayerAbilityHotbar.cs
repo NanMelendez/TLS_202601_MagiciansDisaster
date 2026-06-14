@@ -40,6 +40,7 @@ public class PlayerAbilityHotbar : MonoBehaviour
 		states = Enumerable.Repeat(AbilityState.READY, abilities.Count).ToList();
 		activeTimes = Enumerable.Repeat(0.0f, abilities.Count).ToList();
 		cooldownTimes = Enumerable.Repeat(0.0f, abilities.Count).ToList();
+		UIHotbar.CreateLayout(abilities);
     }
 
 	private void OnEnable()

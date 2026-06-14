@@ -104248,6 +104248,17 @@ Transform:
   - {fileID: 2137105637}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1939451777 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6182209663384121848, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
+  m_PrefabInstance: {fileID: 7813375560745754292}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce94d8087f4ca04a9b37a9964c5dc9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIAbilityHotbar
 --- !u!224 &2055858127 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 398117387949426205, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
@@ -104436,6 +104447,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8580527357646141192, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
+      propertyPath: UIHotbar
+      value: 
+      objectReference: {fileID: 1939451777}
+    - target: {fileID: 8580527357646141192, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
       propertyPath: UIHandler
       value: 
       objectReference: {fileID: 792484612}
@@ -104620,6 +104635,10 @@ PrefabInstance:
     - target: {fileID: 3571398950268094229, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182209663384121848, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
+      propertyPath: spacing
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8507595939803605589, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
       propertyPath: m_Name

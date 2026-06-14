@@ -1,21 +1,33 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class UIAbilityHotbar : MonoBehaviour
 {
-	[SerializeField] private PlayerAbilityHotbar abilities;
 	[SerializeField] private GameObject slotPrefab;
+	[SerializeField] private float spacing;
 
-	private void Awake()
+	public void CreateLayout(List<Ability> abilities)
 	{
-		int slotW, slotH;
-		slotW = (int)slotPrefab.GetComponent<RectTransform>().rect.width;
-		slotH = (int)slotPrefab.GetComponent<RectTransform>().rect.height;
+		if (!slotPrefab)
+			return;
 
-		for (int i = 0; i < abilities.AbilityCount; i++)
+		int nSlots = abilities.Count;
+
+		float w = slotPrefab.GetComponent<RectTransform>().rect.width;
+		float step = w + spacing;
+		float totalW = (nSlots * w) + ((nSlots - 1) * spacing);
+
+		float offset = (-totalW / 2.0f) + (w / 2.0f);
+
+		for (int i = 0; i < abilities.Count; i++)
 		{
-			GameObject slot = Instantiate(slotPrefab, transform);
-			int n = i;
-			slot.name = $"Slot {n + 1}";
+			int _i = i;
+			GameObject iSlot = Instantiate(slotPrefab, transform);
+
+			RectTransform slotRect = iSlot.GetComponent<RectTransform>();
+
+			slotRect.anchoredPosition = new Vector2(offset + (i * step), 0);
+			iSlot.name = $"Slot {_i + 1}";
 		}
 	}
 }
