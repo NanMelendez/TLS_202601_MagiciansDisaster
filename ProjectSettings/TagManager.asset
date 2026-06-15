@@ -9,6 +9,7 @@ TagManager:
   - EnemyDetectionArea
   - Coin
   - Spawner
+  - Wall
   layers:
   - Default
   - TransparentFX

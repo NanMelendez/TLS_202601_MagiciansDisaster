@@ -7,6 +7,7 @@ public class PickupSpawner : MonoBehaviour
 	[SerializeField] private float spawnInterval;
 	[SerializeField] private int spawnLimit;
 	[SerializeField] private float radius = 1.0f;
+	[SerializeField] private Transform anchor;
 
 	private float spawnTimer;
 	private int currentPickupCount;
@@ -49,6 +50,7 @@ public class PickupSpawner : MonoBehaviour
 		Vector2 direction = Quaternion.AngleAxis(Random.Range(-180.0f, 180.0f), Vector3.forward) * Vector2.right;
 
 		GameObject entity = Instantiate(instances[Random.Range(0, instances.Count - 1)], transform.position + (Vector3)direction * distance, Quaternion.identity);
+		entity.transform.parent = anchor;
 		entity.GetComponent<Pickup>().spawner = this;
 		currentPickupCount++;
 	}

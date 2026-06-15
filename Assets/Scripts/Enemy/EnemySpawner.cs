@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour
 	public float spawnCooldown;
 	public int enemyLimit;
 	public float spawnRadius = 1.0f;
+	[SerializeField] private Transform anchor;
 
 	private float spawnTimer;
 	private int currentEnemyCount;
@@ -42,6 +43,7 @@ public class EnemySpawner : MonoBehaviour
 		Vector2 direction = Quaternion.AngleAxis(Random.Range(-180.0f, 180.0f), Vector3.forward) * Vector2.right;
 
 		GameObject entity = Instantiate(enemyInstance, transform.position + (Vector3)direction * distance, Quaternion.identity);
+		entity.transform.parent = anchor;
 		entity.GetComponent<EnemyController>().spawner = this;
 		currentEnemyCount++;
 	}
