@@ -19,6 +19,8 @@ MonoBehaviour:
   refImage: {fileID: 0}
   damage: 15
   knockback: 10
+  effectType: 3
+  effectDuration: 4
   projectile: {fileID: 0}
   speed: 0
   lifetime: 0

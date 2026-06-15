@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -14,7 +15,9 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private PlayerAbilityHotbar hotbar;
 	[SerializeField] private float destroyAfterSeconds;
 	[SerializeField] private Animator spriteAnimator;
-	// [SerializeField] private UIStatsHandler UIHandler;
+
+
+	[NonSerialized] public GameplayState state;
 
 	private bool isAlive;
 
@@ -29,7 +32,7 @@ public class PlayerController : MonoBehaviour
 	private void Awake()
 	{
 		isAlive = true;
-  //      UIHandler.UpdateHealth(health.CurrentHealth, health.MaxHealth);
+		//UIHandler.UpdateHealth(health.CurrentHealth, health.MaxHealth);
 		//UIHandler.UpdateMana(mana.CurrentMana, mana.MaxMana);
     }
 
@@ -40,6 +43,8 @@ public class PlayerController : MonoBehaviour
 			Destroy(gameObject, destroyAfterSeconds);
 			isAlive = false;
 		}
+
+		CheckState();
 
 		HandleAnimator();
 	}
@@ -56,6 +61,23 @@ public class PlayerController : MonoBehaviour
 			flashController.Flash();
 
 			Debug.Log($"¡TMRE ME HIRIERON, -{ec.contactDamage} PINCHES PUNTOS!");
+		}
+	}
+
+	private void CheckState()
+	{
+		switch (state)
+		{
+			case GameplayState.Playing:
+				movement.enabled = true;
+				aim.enabled = true;
+				hotbar.enabled = true;
+				break;
+			default:
+				movement.enabled = false;
+				aim.enabled = false;
+				hotbar.enabled = false;
+				break;
 		}
 	}
 

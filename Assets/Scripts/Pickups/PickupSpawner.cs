@@ -41,7 +41,6 @@ public class PickupSpawner : MonoBehaviour
 	public void PickedUpSignal(float delay)
 	{
 		currentPickupCount--;
-
 	}
 
 	public void Summon()
@@ -49,7 +48,7 @@ public class PickupSpawner : MonoBehaviour
 		float distance = Random.Range(0.0f, radius);
 		Vector2 direction = Quaternion.AngleAxis(Random.Range(-180.0f, 180.0f), Vector3.forward) * Vector2.right;
 
-		GameObject entity = Instantiate(instances[Random.Range(0, instances.Count - 1)], transform.position + (Vector3)direction * distance, Quaternion.identity);
+		GameObject entity = Instantiate(instances[Random.Range(0, instances.Count)], transform.position + (Vector3)direction * distance, Quaternion.identity);
 		entity.transform.parent = anchor;
 		entity.GetComponent<Pickup>().spawner = this;
 		currentPickupCount++;

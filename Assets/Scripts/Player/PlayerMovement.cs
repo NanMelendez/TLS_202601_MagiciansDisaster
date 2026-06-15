@@ -10,6 +10,11 @@ public class PlayerMovement : MonoBehaviour
 	private Vector2 direction;
 	private Key lastDirection;
 
+	private void Awake()
+	{
+		direction = Vector2.zero;
+	}
+
 	private void OnEnable()
 	{
 		movement.action.Enable();
