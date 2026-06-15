@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class EnemyFOV : Aim
 {
@@ -8,6 +9,7 @@ public class EnemyFOV : Aim
 	public LayerMask targetLayer;
 	public LayerMask wallLayer;
 	public float turnSpeed = 1.0f;
+	[SerializeField] private Light2D visionLight;
 
 	private GameObject playerRef;
 	private bool canSeePlayer;
@@ -73,6 +75,13 @@ public class EnemyFOV : Aim
 
 	private void FOV()
 	{
+		visionLight.pointLightInnerAngle = angle;
+		visionLight.pointLightOuterAngle = angle;
+		visionLight.pointLightInnerRadius = radius * 3.0f / 4.0f;
+		visionLight.pointLightOuterRadius = radius;
+
+		visionLight.gameObject.GetComponent<Transform>().rotation = Quaternion.AngleAxis(aimAngle, Vector3.forward) * Quaternion.Euler(new Vector3(0.0f, 0.0f, -90.0f));
+
 		Collider2D[] rangeCheck = Physics2D.OverlapCircleAll(transform.position, radius, targetLayer);
 
 		if (rangeCheck.Length > 0)

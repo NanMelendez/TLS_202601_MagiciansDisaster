@@ -104636,10 +104636,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6182209663384121848, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
-      propertyPath: spacing
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 8507595939803605589, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
       propertyPath: m_Name
       value: Game States UI

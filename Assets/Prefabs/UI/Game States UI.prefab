@@ -717,7 +717,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 123}
+  m_AnchoredPosition: {x: 0, y: 74.8}
   m_SizeDelta: {x: 421.48, y: 62.99}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &6403820414451207375
@@ -1255,7 +1255,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 15}
+  m_AnchoredPosition: {x: 0, y: -10.3}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6182209663384121848
@@ -1271,6 +1271,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIAbilityHotbar
   slotPrefab: {fileID: 1562717279454334652, guid: 4f6e4e3452162fc469ee31a5279fd7cb, type: 3}
+  spacing: 5
+  unselectedColor: {r: 1, g: 1, b: 1, a: 1}
+  selectedColor: {r: 1, g: 0.8431373, b: 0, a: 1}
 --- !u!1 &6839941761443800747
 GameObject:
   m_ObjectHideFlags: 0
@@ -1336,7 +1339,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Health
+  m_text: 'Mana
 
     ? / ?'
   m_isRightToLeft: 0

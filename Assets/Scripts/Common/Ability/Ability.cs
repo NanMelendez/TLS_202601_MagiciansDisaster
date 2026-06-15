@@ -7,6 +7,7 @@ public class Ability : ScriptableObject
     public float cooldownTime;
     public float activeTime;
     public int manaCost;
+    public Sprite refImage;
 
     public virtual void Activate(GameObject parent, bool charged) { }
 

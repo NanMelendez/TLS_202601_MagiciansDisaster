@@ -49,6 +49,6 @@ public class EnemySpawner : MonoBehaviour
 	public void EnemyDeathSignal(float delay = 0.0f)
 	{
 		currentEnemyCount--;
-		spawnTimer += delay;
+		spawnTimer = Mathf.Min(spawnTimer + delay, spawnCooldown);
 	}
 }

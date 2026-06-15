@@ -12,6 +12,7 @@ public class PlayerAbilityHotbar : MonoBehaviour
 	[SerializeField] private UIAbilityHotbar UIHotbar;
 	[SerializeField] private float chargeThreshold;
 	[SerializeField] private UIStatsHandler UIHandler;
+	[SerializeField] private GameObject chargeParticles;
 
 	private int currentAbilityIdx = 0;
 	private List<AbilityState> states;
@@ -35,12 +36,19 @@ public class PlayerAbilityHotbar : MonoBehaviour
 		get { return activator ? activator.action.IsPressed() : false; }
 	}
 
+	public bool IsCharging
+	{
+		get { return charger ? charger.action.IsPressed() : false; }
+	}
+
 	private void Awake()
 	{
 		states = Enumerable.Repeat(AbilityState.READY, abilities.Count).ToList();
 		activeTimes = Enumerable.Repeat(0.0f, abilities.Count).ToList();
 		cooldownTimes = Enumerable.Repeat(0.0f, abilities.Count).ToList();
+
 		UIHotbar.CreateLayout(abilities);
+		UIHotbar.UpdateSelection(currentAbilityIdx);
     }
 
 	private void OnEnable()
@@ -85,48 +93,52 @@ public class PlayerAbilityHotbar : MonoBehaviour
 		}
 
 		if (scrollY != 0.0f)
+		{
 			Debug.Log($"Now using {abilities[currentAbilityIdx].name}");
+			UIHotbar.UpdateSelection(currentAbilityIdx);
+		}
 	}
 
 	private void UpdateAbilitiesStatus(bool activatorBool)
 	{
 		for (int i = 0; i < abilities.Count; i++)
 		{
-			switch (states[i])
-			{
-				case AbilityState.READY:
-					if (activatorBool)
-						EvalAbilityUsage(i);
-					break;
-				case AbilityState.ACTIVE:
-					if (activeTimes[i] > 0)
-						activeTimes[i] -= Time.deltaTime;
-					else
-					{
-						abilities[i].BeginCooldown(gameObject);
-						states[i] = AbilityState.COOLDOWN;
-						cooldownTimes[i] = abilities[i].cooldownTime;
-					}
-					break;
-				case AbilityState.COOLDOWN:
-					if (cooldownTimes[i] > 0)
-						cooldownTimes[i] -= Time.deltaTime;
-					else
-						states[i] = AbilityState.READY;
-					break;
-			}
-		}
+            switch (states[i])
+            {
+                case AbilityState.READY:
+                    if (activatorBool && i == currentAbilityIdx)
+                        EvalAbilityUsage(i);
+                    break;
+                case AbilityState.ACTIVE:
+                    if (activeTimes[i] > 0)
+                        activeTimes[i] -= Time.deltaTime;
+                    else
+                    {
+                        abilities[i].BeginCooldown(gameObject);
+                        states[i] = AbilityState.COOLDOWN;
+                        cooldownTimes[i] = abilities[i].cooldownTime;
+                    }
+                    break;
+                case AbilityState.COOLDOWN:
+                    if (cooldownTimes[i] > 0)
+                        cooldownTimes[i] -= Time.deltaTime;
+                    else
+                        states[i] = AbilityState.READY;
+                    break;
+            }
+        }
 	}
 
 	private void EvalAbilityUsage(int i)
 	{
-		if (mana.CurrentMana - abilities[i].manaCost > 0)
+		if (mana.CurrentMana - abilities[i].manaCost >= 0)
 		{
 			abilities[i].Activate(gameObject, chargeTime >= chargeThreshold);
 			states[i] = AbilityState.ACTIVE;
 			activeTimes[i] = abilities[i].activeTime;
 			mana.ConsumeMana(abilities[i].manaCost);
 			UIHandler.UpdateMana(mana.CurrentMana, mana.MaxMana);
+			UIHotbar.SetCooldownSlider(i, abilities[i].cooldownTime);
 		}
 		else
 			Debug.Log("Not enough mana!");
@@ -135,8 +147,14 @@ public class PlayerAbilityHotbar : MonoBehaviour
 	private void ChargeAttackHandler(bool isPressed)
 	{
 		if (isPressed)
-			chargeTime += Time.deltaTime;
+		{
+            chargeTime += Time.deltaTime;
+			chargeParticles.SetActive(true);
+        }
 		else
-			chargeTime = 0.0f;
+		{
+            chargeTime = 0.0f;
+			chargeParticles.SetActive(false);
+        }
 	}
 }

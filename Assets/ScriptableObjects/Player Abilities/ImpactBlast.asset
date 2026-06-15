@@ -16,7 +16,9 @@ MonoBehaviour:
   cooldownTime: 2.5
   activeTime: 0.1
   manaCost: 30
+  refImage: {fileID: 918378154454207675, guid: 8e93307dbf6a10841a132740f2adfc18, type: 3}
   damage: 30
+  knockback: 0
   projectile: {fileID: 942468747175027456, guid: 32100c87651ff2544ab54a337bdcbae1, type: 3}
   speed: 5
   lifetime: 50
