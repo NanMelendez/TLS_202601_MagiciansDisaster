@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-	[SerializeField] private int maxHealth;
+	[SerializeField] protected int maxHealth;
 	[SerializeField] private float hurtCooldown;
 
-	private int currentHealth;
+    protected int currentHealth;
 	private float hurtCooldownTimer;
 
 	public int MaxHealth
@@ -41,7 +41,7 @@ public class Health : MonoBehaviour
 			hurtCooldownTimer -= Time.deltaTime;
 	}
 
-	public void TakeDamage(int damage)
+	public virtual void TakeDamage(int damage)
 	{
 		if (hurtCooldownTimer > 0.0f)
 			return;
@@ -50,7 +50,7 @@ public class Health : MonoBehaviour
 		hurtCooldownTimer = hurtCooldown;
 	}
 
-	public void Heal(int health)
+	public virtual void Heal(int health)
 	{
 		currentHealth = Mathf.Min(currentHealth + health, maxHealth);
 	}

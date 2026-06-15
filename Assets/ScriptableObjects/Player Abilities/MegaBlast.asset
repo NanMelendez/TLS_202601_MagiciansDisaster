@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4292149b319cb94fb0a21840b6e08f2, type: 3}
-  m_Name: ImpactBlast
+  m_Name: MegaBlast
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAtkRanged
-  name: Impact Blast
-  cooldownTime: 2.5
+  name: Mega Blaster
+  cooldownTime: 3
   activeTime: 0.1
   manaCost: 30
-  refImage: {fileID: 918378154454207675, guid: 8e93307dbf6a10841a132740f2adfc18, type: 3}
-  damage: 30
-  knockback: 0
+  refImage: {fileID: 3175166272133540887, guid: 8e93307dbf6a10841a132740f2adfc18, type: 3}
+  damage: 50
+  knockback: 40
   projectile: {fileID: 942468747175027456, guid: 32100c87651ff2544ab54a337bdcbae1, type: 3}
   speed: 5
-  lifetime: 50
-  spawnOffset: 1.5
+  lifetime: 30
+  spawnOffset: 2

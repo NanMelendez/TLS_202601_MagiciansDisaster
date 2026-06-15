@@ -4849,7 +4849,7 @@ GameObject:
   - component: {fileID: 6294523418204115362}
   - component: {fileID: 4015071952851868858}
   - component: {fileID: 1989442114768149440}
-  - component: {fileID: 7173295958159671596}
+  - component: {fileID: 1236614887801156001}
   - component: {fileID: 5358694823757467932}
   - component: {fileID: 8478675964179521000}
   - component: {fileID: 3778772916964512100}
@@ -4981,7 +4981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   movement: {fileID: 8478675964179521000}
   aim: {fileID: 3778772916964512100}
-  health: {fileID: 7173295958159671596}
+  health: {fileID: 1236614887801156001}
   score: {fileID: 0}
   knockback: {fileID: 6733510732125508942}
   mana: {fileID: 8141856140077509747}
@@ -4990,7 +4990,7 @@ MonoBehaviour:
   destroyAfterSeconds: 2.5
   spriteAnimator: {fileID: 5736912110462041700}
   UIHandler: {fileID: 0}
---- !u!114 &7173295958159671596
+--- !u!114 &1236614887801156001
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4999,11 +4999,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8847441716224455422}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0132657f8fca574099c61c8f28f3a30, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a1fd74ddd41b904bae99f3488262614, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Health
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 100
   hurtCooldown: 0.25
+  statsUI: {fileID: 0}
 --- !u!114 &5358694823757467932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5073,6 +5074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMana
   maxMana: 100
+  statsUI: {fileID: 0}
 --- !u!114 &8580527357646141192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5089,8 +5091,8 @@ MonoBehaviour:
   activator: {fileID: -2046310171536246835, guid: c5c8837423788ee45a19bb855722cf56, type: 3}
   charger: {fileID: -6624921261968273137, guid: c5c8837423788ee45a19bb855722cf56, type: 3}
   abilities:
-  - {fileID: 11400000, guid: 82dc07257766e1f4e820b1852098b88b, type: 2}
-  - {fileID: 11400000, guid: 82202179e8bde5c479bf70bb70b8df52, type: 2}
+  - {fileID: 11400000, guid: 152a9dea8eff6614f87c0648e1397447, type: 2}
+  - {fileID: 11400000, guid: 4fdd40ac575d88d4394821509c5eb6f4, type: 2}
   UIHotbar: {fileID: 0}
   chargeThreshold: 5
   UIHandler: {fileID: 0}

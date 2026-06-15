@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4292149b319cb94fb0a21840b6e08f2, type: 3}
-  m_Name: Pellet
+  m_Name: Zapper Beam
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAtkRanged
-  name: Magic Pellet
-  cooldownTime: 0.1
-  activeTime: 0.1
-  manaCost: 2
-  refImage: {fileID: -5390297038207703446, guid: 8e93307dbf6a10841a132740f2adfc18, type: 3}
-  damage: 10
-  knockback: 5
-  projectile: {fileID: 942468747175027456, guid: f137ed5af0b54b24999ea0832400c5d9, type: 3}
-  speed: 12.5
-  lifetime: 2.5
-  spawnOffset: 1.5
+  name: Zapper
+  cooldownTime: 0.75
+  activeTime: 0
+  manaCost: 0
+  refImage: {fileID: 0}
+  damage: 15
+  knockback: 10
+  projectile: {fileID: 0}
+  speed: 0
+  lifetime: 0
+  spawnOffset: 0

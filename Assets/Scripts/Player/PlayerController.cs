@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private PlayerAbilityHotbar hotbar;
 	[SerializeField] private float destroyAfterSeconds;
 	[SerializeField] private Animator spriteAnimator;
-	[SerializeField] private UIStatsHandler UIHandler;
+	// [SerializeField] private UIStatsHandler UIHandler;
 
 	private bool isAlive;
 
@@ -29,8 +29,8 @@ public class PlayerController : MonoBehaviour
 	private void Awake()
 	{
 		isAlive = true;
-        UIHandler.UpdateHealth(health.CurrentHealth, health.MaxHealth);
-		UIHandler.UpdateMana(mana.CurrentMana, mana.MaxMana);
+  //      UIHandler.UpdateHealth(health.CurrentHealth, health.MaxHealth);
+		//UIHandler.UpdateMana(mana.CurrentMana, mana.MaxMana);
     }
 
 	private void Update()
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
 		{
 			EnemyController ec = collision.gameObject.GetComponent<EnemyController>();
 			health.TakeDamage(ec.contactDamage);
-			UIHandler.UpdateHealth(health.CurrentHealth, health.MaxHealth);
+			//UIHandler.UpdateHealth(health.CurrentHealth, health.MaxHealth);
 			StartCoroutine(AllowKnocback(health.HurtCooldown));
 			Invoke(nameof(ApplyKnockback), 0.02f);
 			flashController.Flash();

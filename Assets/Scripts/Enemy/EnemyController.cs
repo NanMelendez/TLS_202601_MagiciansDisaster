@@ -45,26 +45,26 @@ public class EnemyController : MonoBehaviour
 		{
 			PlayerProjectile pp = collision.gameObject.GetComponent<PlayerProjectile>();
 			lastHitPos = collision.transform.position;
-			TakeDamage(pp.Damage);
+			TakeDamage(pp.Damage, pp.Knockback);
 		}
 	}
 
-	public void TakeDamage(int dmg)
+	public void TakeDamage(int dmg, float knockback)
 	{
 		state = EnemyState.KNOCKBACK;
 		health.TakeDamage(dmg);
 		flashController.Flash();
 		healthBarUI.UpdateUI(health.CurrentHealth, health.MaxHealth);
-		StartCoroutine(AllowKnocback(health.HurtCooldown));
+		StartCoroutine(AllowKnocback(health.HurtCooldown, knockback));
 	}
 
-	private IEnumerator AllowKnocback(float seconds)
+	private IEnumerator AllowKnocback(float seconds, float knockback)
 	{
 		movement.enabled = false;
 
 		yield return null;
 
-		ApplyKnockback(lastHitPos);
+		ApplyKnockback(lastHitPos, knockback);
 
 		yield return new WaitForSeconds(seconds);
 
@@ -72,8 +72,8 @@ public class EnemyController : MonoBehaviour
 		state = EnemyState.IDLE;
 	}
 
-	private void ApplyKnockback(Vector2 hitPos)
+	private void ApplyKnockback(Vector2 hitPos, float force)
 	{
-		knockback.Execute(((Vector2)transform.position - lastHitPos).normalized, 5.0f);
+		knockback.Execute(((Vector2)transform.position - hitPos).normalized, force);
 	}
 }
