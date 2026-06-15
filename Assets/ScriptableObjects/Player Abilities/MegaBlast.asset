@@ -20,6 +20,6 @@ MonoBehaviour:
   damage: 50
   knockback: 40
   projectile: {fileID: 942468747175027456, guid: 32100c87651ff2544ab54a337bdcbae1, type: 3}
-  speed: 5
+  speed: 2
   lifetime: 30
   spawnOffset: 2

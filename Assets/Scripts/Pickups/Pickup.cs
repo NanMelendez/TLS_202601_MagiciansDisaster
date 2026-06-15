@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
 	[SerializeField] private PickupData data;
+
+	[NonSerialized] public PickupSpawner spawner;
 
 	private PickupType type;
 	private int points;
@@ -40,6 +43,9 @@ public class Pickup : MonoBehaviour
 					player.GetComponent<PlayerMana>().AcquireMana(points);
 					break;
 			}
+
+			if (spawner)
+				spawner.PickedUpSignal(0.5f);
 
 			Destroy(gameObject);
 		}
