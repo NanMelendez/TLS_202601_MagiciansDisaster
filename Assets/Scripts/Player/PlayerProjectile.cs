@@ -4,12 +4,13 @@ using UnityEngine;
 public class PlayerProjectile : MonoBehaviour
 {
 	[SerializeField] private Rigidbody2D rb2d;
-	[SerializeField] private Animator animator;
+	// [SerializeField] private Animator animator;
+	[SerializeField] private AttackAnimation atkAnimation;
 
 	private int damage;
 	private float knockback;
 
-	private static readonly int AnimChargedHash = Animator.StringToHash("charged");
+	// private static readonly int AnimChargedHash = Animator.StringToHash("charged");
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
@@ -35,6 +36,7 @@ public class PlayerProjectile : MonoBehaviour
 		this.knockback = knockForce;
 		rb2d.linearVelocity = direction * speed;
 		Destroy(gameObject, lifetime);
-		animator.SetFloat(AnimChargedHash, charged ? 1.0f : 0.0f);
+		// animator.SetFloat(AnimChargedHash, charged ? 1.0f : 0.0f);
+		atkAnimation.Init(charged);
 	}
 }

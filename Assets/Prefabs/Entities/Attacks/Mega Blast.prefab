@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3130505826388193418}
   - component: {fileID: 5759424111165509100}
   - component: {fileID: 5030602121959709994}
+  - component: {fileID: 7466571796027751850}
   - component: {fileID: 2376378441167014505}
   m_Layer: 0
   m_Name: Mega Blast
@@ -172,6 +173,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerProjectile
   rb2d: {fileID: 3130505826388193418}
   animator: {fileID: 2376378441167014505}
+  atkAnimation: {fileID: 7466571796027751850}
+--- !u!114 &7466571796027751850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942468747175027456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d1470422de8aa4393df5aed8919e61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackAnimation
+  spriteAnimator: {fileID: 2376378441167014505}
 --- !u!95 &2376378441167014505
 Animator:
   serializedVersion: 7
