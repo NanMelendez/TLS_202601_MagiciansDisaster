@@ -14,7 +14,7 @@ public class PlayerProjectile : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (!collision.CompareTag("Spawner"))
+		if (!collision.CompareTag("Spawner") && !collision.CompareTag("Player"))
 			Destroy(gameObject);
 	}
 

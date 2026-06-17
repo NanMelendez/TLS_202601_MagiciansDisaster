@@ -4202,16 +4202,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8847441716224455422, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
   m_PrefabInstance: {fileID: 1301938613890031560}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &1020059945 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 6294523418204115362, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
-  m_PrefabInstance: {fileID: 1301938613890031560}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &1020059946 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 2214563724376581330, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
-  m_PrefabInstance: {fileID: 1301938613890031560}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1097121841
 GameObject:
   m_ObjectHideFlags: 0
@@ -16985,18 +16975,6 @@ PrefabInstance:
       propertyPath: statsUI
       value: 
       objectReference: {fileID: 792484612}
-    - target: {fileID: 1989442114768149440, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
-      propertyPath: rb2d
-      value: 
-      objectReference: {fileID: 1020059946}
-    - target: {fileID: 1989442114768149440, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
-      propertyPath: UIHandler
-      value: 
-      objectReference: {fileID: 792484612}
-    - target: {fileID: 1989442114768149440, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
-      propertyPath: playerCollider
-      value: 
-      objectReference: {fileID: 1020059945}
     - target: {fileID: 7160156788180944597, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
