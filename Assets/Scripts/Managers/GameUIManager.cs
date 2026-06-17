@@ -16,7 +16,7 @@ public class GameUIManager : MonoBehaviour
 		}
 		set
 		{
-			Debug.Log($"Cambiando a: {value}");
+			// Debug.Log($"Cambiando a: {value}");
 			state = value;
 			switch (value)
 			{

@@ -105513,10 +105513,6 @@ PrefabInstance:
       propertyPath: statsUI
       value: 
       objectReference: {fileID: 792484612}
-    - target: {fileID: 1989442114768149440, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
-      propertyPath: UIHandler
-      value: 
-      objectReference: {fileID: 792484612}
     - target: {fileID: 7160156788180944597, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -105735,20 +105731,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2342104980557595211, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
-      propertyPath: m_Value
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3453210680546189020, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3453210680546189020, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3453210680546189020, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
-      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3571398950268094229, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}

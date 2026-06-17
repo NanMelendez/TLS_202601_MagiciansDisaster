@@ -4988,6 +4988,8 @@ MonoBehaviour:
   flashController: {fileID: 5358694823757467932}
   hotbar: {fileID: 8580527357646141192}
   destroyAfterSeconds: 2.5
+  rb2d: {fileID: 2214563724376581330}
+  playerCollider: {fileID: 6294523418204115362}
   spriteAnimator: {fileID: 5736912110462041700}
 --- !u!114 &1236614887801156001
 MonoBehaviour:

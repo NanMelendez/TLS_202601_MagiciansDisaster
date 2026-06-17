@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,9 +10,11 @@ public class UIAbilityHotbar : MonoBehaviour
 	[SerializeField] private float spacing;
 	[SerializeField] private Color unselectedColor = Color.white;
 	[SerializeField] private Color selectedColor = Color.gold;
+	[SerializeField] private TextMeshProUGUI currentAbilityText;
 
-	private List<Image> slotsBgImgs = new List<Image>();
+    private List<Image> slotsBgImgs = new List<Image>();
 	private List<Slider> slotsSliders = new List<Slider>();
+	private List<string> slotsNames = new List<string>();
 
 	public void CreateLayout(List<Ability> abilities)
 	{
@@ -41,6 +44,7 @@ public class UIAbilityHotbar : MonoBehaviour
 
             slotsBgImgs.Add(iSlot.transform.Find("Background").GetComponent<Image>());
 			slotsSliders.Add(iSlot.transform.Find("CooldownSlider").GetComponent<Slider>());
+			slotsNames.Add(abilities[i].name);
 		}
 	}
 
@@ -48,6 +52,8 @@ public class UIAbilityHotbar : MonoBehaviour
 	{
 		for (int i = 0; i < slotsBgImgs.Count; i++)
             slotsBgImgs[i].color = i == idx ? selectedColor : unselectedColor;
+		currentAbilityText.text = slotsNames[idx];
+		StartCoroutine(AnimateTextFade(1.5f));
 	}
 
 	public void SetCooldownSlider(int idx, float cooldownTime)
@@ -71,4 +77,22 @@ public class UIAbilityHotbar : MonoBehaviour
 
 		slotsSliders[idx].value = 0.0f;
 	}
+
+	private IEnumerator AnimateTextFade(float textFadeTime)
+	{
+        currentAbilityText.gameObject.SetActive(true);
+        float elapsed = 0.0f;
+
+		while (elapsed < textFadeTime)
+		{
+			elapsed += Time.deltaTime;
+
+			currentAbilityText.color = new Color(currentAbilityText.color.r, currentAbilityText.color.g, currentAbilityText.color.r, 1.0f - elapsed / textFadeTime);
+
+			yield return null;
+		}
+
+        currentAbilityText.color = new Color(currentAbilityText.color.r, currentAbilityText.color.g, currentAbilityText.color.r, 1.0f);
+        currentAbilityText.gameObject.SetActive(false);
+    }
 }

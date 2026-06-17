@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private FlashController flashController;
 	[SerializeField] private PlayerAbilityHotbar hotbar;
 	[SerializeField] private float destroyAfterSeconds;
+	[SerializeField] private Rigidbody2D rb2d;
+	[SerializeField] private BoxCollider2D playerCollider;
 	[SerializeField] private Animator spriteAnimator;
 
 
@@ -32,14 +34,14 @@ public class PlayerController : MonoBehaviour
 	private void Awake()
 	{
 		isAlive = true;
-		//UIHandler.UpdateHealth(health.CurrentHealth, health.MaxHealth);
-		//UIHandler.UpdateMana(mana.CurrentMana, mana.MaxMana);
     }
 
 	private void Update()
 	{
 		if (!health.IsAlive && isAlive)
 		{
+			rb2d.linearVelocity = Vector2.zero;
+			playerCollider.enabled = false;
 			Destroy(gameObject, destroyAfterSeconds);
 			isAlive = false;
 		}
@@ -49,22 +51,18 @@ public class PlayerController : MonoBehaviour
 		HandleAnimator();
 	}
 
-	private void OnCollisionEnter2D(Collision2D collision)
-	{
-		if (collision.gameObject.CompareTag("Enemy"))
-		{
-			EnemyController ec = collision.gameObject.GetComponent<EnemyController>();
-			health.TakeDamage(ec.contactDamage);
-			//UIHandler.UpdateHealth(health.CurrentHealth, health.MaxHealth);
-			StartCoroutine(AllowKnocback(health.HurtCooldown));
-			Invoke(nameof(ApplyKnockback), 0.02f);
-			flashController.Flash();
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            EnemyController ec = collision.gameObject.GetComponent<EnemyController>();
+            health.TakeDamage(ec.contactDamage);
+            StartCoroutine(AllowKnocback(collision.transform.position - transform.position, health.HurtCooldown, 50.0f));
+            flashController.Flash();
+        }
+    }
 
-			Debug.Log($"¡TMRE ME HIRIERON, -{ec.contactDamage} PINCHES PUNTOS!");
-		}
-	}
-
-	private void CheckState()
+    private void CheckState()
 	{
 		switch (state)
 		{
@@ -81,18 +79,15 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-	IEnumerator AllowKnocback(float seconds)
+	IEnumerator AllowKnocback(Vector2 direction, float seconds, float force)
 	{
 		movement.enabled = false;
-		Debug.Log("Movimiento deshabilitado [JUGADOR]");
-		yield return new WaitForSeconds(seconds);
-		movement.enabled = true;
-		Debug.Log("Movimiento habilitado [JUGADOR]");
-	}
+		yield return new WaitForSeconds(0.02f);
 
-	void ApplyKnockback()
-	{
-		knockback.Execute(movement.Direction, 50.0f);
+        knockback.Execute(direction, force);
+
+        yield return new WaitForSeconds(seconds);
+		movement.enabled = true;
 	}
 
 	private void HandleAnimator()

@@ -360,7 +360,7 @@ MonoBehaviour:
   flashController: {fileID: 7100097870653872756}
   healthBarUI: {fileID: 3506663677476279082}
   destroyAfterSeconds: 1
-  contactDamage: 0
+  contactDamage: 15
 --- !u!114 &1832593350788887559
 MonoBehaviour:
   m_ObjectHideFlags: 0
