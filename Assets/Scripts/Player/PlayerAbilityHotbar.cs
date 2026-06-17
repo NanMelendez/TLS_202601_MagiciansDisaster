@@ -8,16 +8,16 @@ public class PlayerAbilityHotbar : MonoBehaviour
 	[SerializeField] private PlayerMana mana;
 	[SerializeField] private InputActionReference activator;
 	[SerializeField] private InputActionReference charger;
-	[SerializeField] private List<Ability> abilities;
+	[SerializeField] private List<Ability> abilities = new List<Ability>();
 	[SerializeField] private UIAbilityHotbar UIHotbar;
 	[SerializeField] private float chargeThreshold;
 	[SerializeField] private UIStatsHandler UIHandler;
 	[SerializeField] private GameObject chargeParticles;
 
 	private int currentAbilityIdx = 0;
-	private List<AbilityState> states;
-	private List<float> activeTimes;
-	private List<float> cooldownTimes;
+	private List<AbilityState> states = new List<AbilityState>();
+	private List<float> activeTimes = new List<float>();
+	private List<float> cooldownTimes = new List<float>();
 
 	private float chargeTime;
 

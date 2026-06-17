@@ -112,10 +112,10 @@ TextureImporter:
       name: pickups_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 1
-        width: 10
-        height: 13
+        x: 2
+        y: 17
+        width: 12
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,7 +135,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 19
-        y: 1
+        y: 18
         width: 10
         height: 13
       alignment: 0
@@ -156,10 +156,10 @@ TextureImporter:
       name: pickups_2
       rect:
         serializedVersion: 2
-        x: 34
-        y: 4
-        width: 12
-        height: 11
+        x: 37
+        y: 21
+        width: 6
+        height: 7
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,10 +178,10 @@ TextureImporter:
       name: pickups_3
       rect:
         serializedVersion: 2
-        x: 51
+        x: 1
         y: 1
-        width: 10
-        height: 13
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,6 +192,50 @@ TextureImporter:
       bones: []
       spriteID: 32db8f8b3b7b26080800000000000000
       internalID: -9195585506606793437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickups_4
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 3
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1da8d0608fa24b14ba4354937c1c0db8
+      internalID: 372409541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickups_5
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 5
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f72bcf82c601a844a908b7312a70c5a
+      internalID: 1434756767
       vertices: []
       indices: 
       edges: []
@@ -214,6 +258,8 @@ TextureImporter:
       pickups_1: 2472404345495907046
       pickups_2: 4898008824136272398
       pickups_3: -9195585506606793437
+      pickups_4: 372409541
+      pickups_5: 1434756767
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

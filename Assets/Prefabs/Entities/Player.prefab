@@ -4989,7 +4989,6 @@ MonoBehaviour:
   hotbar: {fileID: 8580527357646141192}
   destroyAfterSeconds: 2.5
   spriteAnimator: {fileID: 5736912110462041700}
-  UIHandler: {fileID: 0}
 --- !u!114 &1236614887801156001
 MonoBehaviour:
   m_ObjectHideFlags: 0
