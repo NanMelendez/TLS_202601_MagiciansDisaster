@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4292149b319cb94fb0a21840b6e08f2, type: 3}
   m_Name: Fireball
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAtkRanged
-  name: Zapper
+  name: Fireball
   cooldownTime: 0.5
   activeTime: 0.1
   manaCost: 5
