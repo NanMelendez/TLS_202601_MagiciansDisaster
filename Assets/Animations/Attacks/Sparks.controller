@@ -54,7 +54,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Blast Type
+  m_Name: Blast
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -120,7 +120,7 @@ BlendTree:
     m_Motion: {fileID: 7400000, guid: 114d33ead1f297a449c7b614666818c4, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
-    m_TimeScale: 0.01
+    m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: charged
     m_Mirror: 0
@@ -128,7 +128,7 @@ BlendTree:
     m_Motion: {fileID: 7400000, guid: 7faf346b43f9bcd46b3e4d48c867d6fd, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
-    m_TimeScale: 0.01
+    m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: charged
     m_Mirror: 0
@@ -136,7 +136,7 @@ BlendTree:
   m_BlendParameterY: Blend
   m_MinThreshold: 0
   m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
+  m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
 --- !u!1107 &2961000213846605676
@@ -176,7 +176,7 @@ BlendTree:
     m_Motion: {fileID: 7400000, guid: ec82a464a6e059348ac4d74e358045d6, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
-    m_TimeScale: 0.01
+    m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: charged
     m_Mirror: 0
@@ -184,7 +184,7 @@ BlendTree:
     m_Motion: {fileID: 7400000, guid: f24c27d21d803294f8f9b6ca09a0f121, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
-    m_TimeScale: 0.01
+    m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: charged
     m_Mirror: 0
@@ -192,7 +192,7 @@ BlendTree:
   m_BlendParameterY: Blend
   m_MinThreshold: 0
   m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
+  m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
 --- !u!1102 &8506823218968859979
@@ -202,7 +202,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Atk Type
+  m_Name: Loop
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:

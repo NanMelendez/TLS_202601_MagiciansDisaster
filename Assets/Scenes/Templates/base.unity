@@ -4455,7 +4455,7 @@ PrefabInstance:
       objectReference: {fileID: 2067420680}
     - target: {fileID: 7553285707399419713, guid: 53f5d7d3285b2c04c919780527bb21c4, type: 3}
       propertyPath: enemyLimit
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7553285707399419713, guid: 53f5d7d3285b2c04c919780527bb21c4, type: 3}
       propertyPath: spawnRadius
@@ -17204,6 +17204,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1387616703802701213, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387616703802701213, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387616703802701213, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387616703802701213, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387616703802701213, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2294374635483468066, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2294374635483468066, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -37.01
+      objectReference: {fileID: 0}
     - target: {fileID: 3453210680546189020, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -17224,6 +17252,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5563745763500981366}
+    - target: {fileID: 6837788729015126485, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837788729015126485, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837788729015126485, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837788729015126485, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6837788729015126485, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8507595939803605589, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
       propertyPath: m_Name
       value: Game States UI
