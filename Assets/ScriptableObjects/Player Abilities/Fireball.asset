@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4292149b319cb94fb0a21840b6e08f2, type: 3}
-  m_Name: Zapper Beam
+  m_Name: Fireball
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAtkRanged
   name: Zapper
-  cooldownTime: 0.75
-  activeTime: 0.2
-  manaCost: 10
-  refImage: {fileID: 918378154454207675, guid: 8e93307dbf6a10841a132740f2adfc18, type: 3}
-  damage: 15
+  cooldownTime: 0.5
+  activeTime: 0.1
+  manaCost: 5
+  refImage: {fileID: -4288870982852407420, guid: 8e93307dbf6a10841a132740f2adfc18, type: 3}
+  damage: 5
   knockback: 10
-  effectType: 3
+  effectType: 1
   effectDuration: 4
-  projectile: {fileID: 942468747175027456, guid: be7ca83342ad4324d99d85a483495d2d, type: 3}
-  speed: 10
-  lifetime: 10
+  projectile: {fileID: 942468747175027456, guid: ff245cc8895794c4690b22c9797abcdf, type: 3}
+  speed: 7.5
+  lifetime: 15
   spawnOffset: 1.5

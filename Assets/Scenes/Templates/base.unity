@@ -17027,6 +17027,22 @@ PrefabInstance:
       propertyPath: UIHandler
       value: 
       objectReference: {fileID: 792484612}
+    - target: {fileID: 8580527357646141192, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
+      propertyPath: abilities.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8580527357646141192, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
+      propertyPath: 'abilities.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 373fd797c593a404bb402885bf8943bd, type: 2}
+    - target: {fileID: 8580527357646141192, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
+      propertyPath: 'abilities.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: aa26736bb341fcc4ab93f0d30fa7a609, type: 2}
+    - target: {fileID: 8580527357646141192, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
+      propertyPath: 'abilities.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 4fdd40ac575d88d4394821509c5eb6f4, type: 2}
     - target: {fileID: 8847441716224455422, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
       propertyPath: m_Name
       value: Player
@@ -17270,7 +17286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6837788729015126485, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -7.3
       objectReference: {fileID: 0}
     - target: {fileID: 8507595939803605589, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
       propertyPath: m_Name

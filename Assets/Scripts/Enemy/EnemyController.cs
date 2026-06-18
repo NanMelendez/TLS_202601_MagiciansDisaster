@@ -53,11 +53,11 @@ public class EnemyController : MonoBehaviour
 					StartCoroutine(ContinuousAttack(pp.Damage, pp.Knockback, 3.0f));
 					break;
 				case AttackEffectType.Stun:
-					StartCoroutine(SlowdownMovement(0.0f, 5.0f));
+					StartCoroutine(SlowdownMovement(0.0f, pp.effectDuration));
 					TakeDamage(pp.Damage, pp.Knockback);
 					break;
 				case AttackEffectType.Slowdown:
-                    StartCoroutine(SlowdownMovement(0.25f, 5.0f));
+                    StartCoroutine(SlowdownMovement(0.25f, pp.effectDuration));
                     TakeDamage(pp.Damage, pp.Knockback);
                     break;
 				default:
