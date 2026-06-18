@@ -13,6 +13,7 @@ public class EnemyFOV : Aim
 
 	private GameObject playerRef;
 	private bool canSeePlayer;
+	private bool seesWall;
 	private float aimAngle = 0.0f;
 
 	private void Start()
@@ -47,6 +48,11 @@ public class EnemyFOV : Aim
 	public bool CanSeePlayer
 	{
 		get {  return canSeePlayer; }
+	}
+
+	public bool SeesWall
+	{
+		get { return seesWall; }
 	}
 
 	public float AimAngle
@@ -108,6 +114,21 @@ public class EnemyFOV : Aim
 		}
 		else if (canSeePlayer)
 			canSeePlayer = false;
+
+		Collider2D[] rangeWallCheck = Physics2D.OverlapCircleAll(transform.position, radius * 0.25f, wallLayer);
+
+		if (rangeWallCheck.Length > 0)
+		{
+			Transform target = rangeWallCheck[0].transform;
+			Vector2 direction = (target.position - transform.position).normalized;
+
+			if (Vector2.Angle(this.direction, direction) < angle / 2)
+				seesWall = true;
+		}
+		else if (seesWall)
+		{
+			seesWall = false;
+		}
 	}
 
 	private Vector2 DirectionFromAngle(float localAngle, float globalAngle)
