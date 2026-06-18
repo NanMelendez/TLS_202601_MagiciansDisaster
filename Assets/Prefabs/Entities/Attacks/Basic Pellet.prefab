@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerProjectile
   rb2d: {fileID: 3130505826388193418}
+  c2d: {fileID: 5759424111165509100}
   atkAnimation: {fileID: 6431860925357896626}
 --- !u!114 &6431860925357896626
 MonoBehaviour:

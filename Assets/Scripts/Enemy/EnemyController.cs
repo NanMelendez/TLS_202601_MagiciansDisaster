@@ -45,7 +45,26 @@ public class EnemyController : MonoBehaviour
 		{
 			PlayerProjectile pp = collision.gameObject.GetComponent<PlayerProjectile>();
 			lastHitPos = collision.transform.position;
-			TakeDamage(pp.Damage, pp.Knockback);
+			// TakeDamage(pp.Damage, pp.Knockback);
+
+			switch (pp.effectType)
+			{
+				case AttackEffectType.Burn:
+					StartCoroutine(ContinuousAttack(pp.Damage, pp.Knockback, 3.0f));
+					break;
+				case AttackEffectType.Stun:
+					StartCoroutine(SlowdownMovement(0.0f, 5.0f));
+					TakeDamage(pp.Damage, pp.Knockback);
+					break;
+				case AttackEffectType.Slowdown:
+                    StartCoroutine(SlowdownMovement(0.25f, 5.0f));
+                    TakeDamage(pp.Damage, pp.Knockback);
+                    break;
+				default:
+				case AttackEffectType.None:
+                    TakeDamage(pp.Damage, pp.Knockback);
+                    break;
+			}
 		}
 	}
 
@@ -75,5 +94,43 @@ public class EnemyController : MonoBehaviour
 	private void ApplyKnockback(Vector2 hitPos, float force)
 	{
 		knockback.Execute(((Vector2)transform.position - hitPos).normalized, force);
+	}
+
+	public IEnumerator ContinuousAttack(int damage, float knockForce, float s)
+	{
+		float elapsed = 0.0f;
+
+		bool firstKnock = false;
+
+		while (elapsed < s)
+		{
+			elapsed += Time.deltaTime;
+			if (!firstKnock)
+			{
+				TakeDamage(damage, knockForce);
+				firstKnock = true;
+			}
+			else
+				TakeDamage(damage, 0.0f);
+
+			yield return null;
+		}
+	}
+
+	public IEnumerator SlowdownMovement(float factor, float s)
+	{
+		float elapsed = 0.0f;
+		float originalSpeed = movement.speed;
+
+        movement.speed *= factor;
+
+        while (elapsed < s)
+		{
+			elapsed += Time.deltaTime;
+
+			yield return null;
+		}
+
+		movement.speed = originalSpeed;
 	}
 }

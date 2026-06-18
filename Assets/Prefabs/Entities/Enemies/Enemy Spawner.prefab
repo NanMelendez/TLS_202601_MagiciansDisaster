@@ -94,7 +94,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -140,6 +140,7 @@ MonoBehaviour:
   spawnCooldown: 0.75
   enemyLimit: 10
   spawnRadius: 5
+  anchor: {fileID: 0}
 --- !u!1 &6663519877173422924
 GameObject:
   m_ObjectHideFlags: 0

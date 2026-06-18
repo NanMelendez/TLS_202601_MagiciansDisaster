@@ -19,6 +19,8 @@ MonoBehaviour:
   refImage: {fileID: -5390297038207703446, guid: 8e93307dbf6a10841a132740f2adfc18, type: 3}
   damage: 10
   knockback: 5
+  effectType: 0
+  effectDuration: 0
   projectile: {fileID: 942468747175027456, guid: f137ed5af0b54b24999ea0832400c5d9, type: 3}
   speed: 12.5
   lifetime: 2.5
