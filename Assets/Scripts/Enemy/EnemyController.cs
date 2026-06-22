@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
 	[SerializeField] private EnemyMovement movement;
 	[SerializeField] private Health health;
 	[SerializeField] private Knockback knockback;
-	[SerializeField] private FlashController flashController;
+	[SerializeField] private FlashController flash;
 	[SerializeField] private EnemyHealthBarUI healthBarUI;
 	[SerializeField] private float destroyAfterSeconds;
 	public int contactDamage;
@@ -22,6 +22,7 @@ public class EnemyController : MonoBehaviour
 	private void Awake()
 	{
 		isAlive = true;
+		flash.Flash(Color.lavenderBlush, 1.5f);
 	}
 
 	private void Update()
@@ -43,36 +44,39 @@ public class EnemyController : MonoBehaviour
 	{
 		if (collision.CompareTag("PlayerProjectile"))
 		{
-			PlayerProjectile pp = collision.gameObject.GetComponent<PlayerProjectile>();
-			lastHitPos = collision.transform.position;
-			// TakeDamage(pp.Damage, pp.Knockback);
-
-			switch (pp.effectType)
+			if (health.Cooldown == 0.0f)
 			{
-				case AttackEffectType.Burn:
-					StartCoroutine(ContinuousAttack(pp.Damage, pp.Knockback, 3.0f));
-					break;
-				case AttackEffectType.Stun:
-					StartCoroutine(SlowdownMovement(0.0f, pp.effectDuration));
-					TakeDamage(pp.Damage, pp.Knockback);
-					break;
-				case AttackEffectType.Slowdown:
-                    StartCoroutine(SlowdownMovement(0.25f, pp.effectDuration));
-                    TakeDamage(pp.Damage, pp.Knockback);
-                    break;
-				default:
-				case AttackEffectType.None:
-                    TakeDamage(pp.Damage, pp.Knockback);
-                    break;
+				PlayerProjectile pp = collision.gameObject.GetComponent<PlayerProjectile>();
+				lastHitPos = collision.transform.position;
+				// TakeDamage(pp.Damage, pp.Knockback);
+
+				switch (pp.effectType)
+				{
+					case AttackEffectType.Burn:
+						StartCoroutine(ContinuousAttack(pp.Damage, pp.Knockback, 3.0f, Color.orange));
+						break;
+					case AttackEffectType.Stun:
+						StartCoroutine(SlowdownMovement(0.0f, pp.effectDuration));
+						TakeDamage(pp.Damage, pp.Knockback, pp.effectDuration, Color.paleGreen);
+						break;
+					case AttackEffectType.Slowdown:
+						StartCoroutine(SlowdownMovement(0.25f, pp.effectDuration));
+						TakeDamage(pp.Damage, pp.Knockback, 0.2f, Color.red);
+						break;
+					default:
+					case AttackEffectType.None:
+						TakeDamage(pp.Damage, pp.Knockback, 0.2f, Color.red);
+						break;
+				}
 			}
 		}
 	}
 
-	public void TakeDamage(int dmg, float knockback)
+	public void TakeDamage(int dmg, float knockback, float flashTime, Color color)
 	{
 		state = EnemyState.KNOCKBACK;
 		health.TakeDamage(dmg);
-		flashController.Flash();
+		flash.Flash(color, flashTime);
 		healthBarUI.UpdateUI(health.CurrentHealth, health.MaxHealth);
 		StartCoroutine(AllowKnocback(health.HurtCooldown, knockback));
 	}
@@ -96,7 +100,7 @@ public class EnemyController : MonoBehaviour
 		knockback.Execute(((Vector2)transform.position - hitPos).normalized, force);
 	}
 
-	public IEnumerator ContinuousAttack(int damage, float knockForce, float s)
+	public IEnumerator ContinuousAttack(int damage, float knockForce, float s, Color color)
 	{
 		float elapsed = 0.0f;
 
@@ -105,13 +109,14 @@ public class EnemyController : MonoBehaviour
 		while (elapsed < s)
 		{
 			elapsed += Time.deltaTime;
-			if (!firstKnock)
-			{
-				TakeDamage(damage, knockForce);
-				firstKnock = true;
-			}
-			else
-				TakeDamage(damage, 0.0f);
+			if (health.Cooldown == 0.0f)
+				if (!firstKnock)
+				{
+					TakeDamage(damage, knockForce, 0.15f, Color.red);
+					firstKnock = true;
+				}
+				else
+					TakeDamage(damage, 0.0f, 0.15f, color);
 
 			yield return null;
 		}

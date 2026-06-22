@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private Score score;
 	[SerializeField] private Knockback knockback;
 	[SerializeField] private PlayerMana mana;
-	[SerializeField] private FlashController flashController;
+	// [SerializeField] private FlashController flashController;
+	[SerializeField] private FlashController flash;
 	[SerializeField] private PlayerAbilityHotbar hotbar;
 	[SerializeField] private float destroyAfterSeconds;
 	[SerializeField] private Rigidbody2D rb2d;
@@ -55,11 +56,14 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            EnemyController ec = collision.gameObject.GetComponent<EnemyController>();
-            health.TakeDamage(ec.contactDamage);
-            StartCoroutine(AllowKnocback(collision.transform.position - transform.position, health.HurtCooldown, 50.0f));
-            flashController.Flash();
-        }
+			if (health.Cooldown == 0.0f)
+			{
+				EnemyController ec = collision.gameObject.GetComponent<EnemyController>();
+				health.TakeDamage(ec.contactDamage);
+				StartCoroutine(AllowKnocback(collision.transform.position - transform.position, health.HurtCooldown, 50.0f));
+				flash.Flash(Color.red, 0.25f);
+			}
+		}
     }
 
     private void CheckState()

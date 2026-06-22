@@ -16975,6 +16975,10 @@ PrefabInstance:
       propertyPath: statsUI
       value: 
       objectReference: {fileID: 792484612}
+    - target: {fileID: 1236614887801156001, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
+      propertyPath: hurtCooldown
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 7160156788180944597, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

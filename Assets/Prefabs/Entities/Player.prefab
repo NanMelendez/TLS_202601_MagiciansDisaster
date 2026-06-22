@@ -4848,9 +4848,9 @@ GameObject:
   - component: {fileID: 2214563724376581330}
   - component: {fileID: 6294523418204115362}
   - component: {fileID: 4015071952851868858}
+  - component: {fileID: 5506495435422998364}
   - component: {fileID: 1989442114768149440}
   - component: {fileID: 1236614887801156001}
-  - component: {fileID: 5358694823757467932}
   - component: {fileID: 8478675964179521000}
   - component: {fileID: 3778772916964512100}
   - component: {fileID: 6733510732125508942}
@@ -4967,6 +4967,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShadowPlacer
   distance: 0.5
   scale: {x: 0.65, y: 0.65}
+--- !u!114 &5506495435422998364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8847441716224455422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0119b042e917ea4d97f411895ed48f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlashControllerV2
+  spriteRenderer: {fileID: 5960714145269184843}
 --- !u!114 &1989442114768149440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4985,7 +4998,7 @@ MonoBehaviour:
   score: {fileID: 0}
   knockback: {fileID: 6733510732125508942}
   mana: {fileID: 8141856140077509747}
-  flashController: {fileID: 5358694823757467932}
+  flash: {fileID: 5506495435422998364}
   hotbar: {fileID: 8580527357646141192}
   destroyAfterSeconds: 2.5
   rb2d: {fileID: 2214563724376581330}
@@ -5006,22 +5019,6 @@ MonoBehaviour:
   maxHealth: 100
   hurtCooldown: 0.25
   statsUI: {fileID: 0}
---- !u!114 &5358694823757467932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8847441716224455422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 468aa4e18de4e2b4589e86e48f9f8b19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FlashController
-  color: {r: 1, g: 1, b: 1, a: 1}
-  sprRenderer: {fileID: 5960714145269184843}
-  flashMaterial: {fileID: 2100000, guid: 5b03cccac1867e041993fcc842ad842f, type: 2}
-  duration: 0.125
 --- !u!114 &8478675964179521000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5100,6 +5097,7 @@ MonoBehaviour:
   chargeThreshold: 5
   UIHandler: {fileID: 0}
   chargeParticles: {fileID: 4721769812323865238}
+  flash: {fileID: 5506495435422998364}
 --- !u!1 &8967553314854099617
 GameObject:
   m_ObjectHideFlags: 0
@@ -5159,7 +5157,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 5b03cccac1867e041993fcc842ad842f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

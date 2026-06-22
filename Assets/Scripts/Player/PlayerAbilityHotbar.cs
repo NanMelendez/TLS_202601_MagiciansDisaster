@@ -13,7 +13,8 @@ public class PlayerAbilityHotbar : MonoBehaviour
 	[SerializeField] private float chargeThreshold;
 	[SerializeField] private UIStatsHandler UIHandler;
 	[SerializeField] private GameObject chargeParticles;
-
+	[SerializeField] private FlashController flash;
+	
 	private int currentAbilityIdx = 0;
 	private List<AbilityState> states = new List<AbilityState>();
 	private List<float> activeTimes = new List<float>();
@@ -94,7 +95,7 @@ public class PlayerAbilityHotbar : MonoBehaviour
 
 		if (scrollY != 0.0f)
 		{
-			Debug.Log($"Now using {abilities[currentAbilityIdx].name}");
+			// Debug.Log($"Now using {abilities[currentAbilityIdx].name}");
 			UIHotbar.UpdateSelection(currentAbilityIdx);
 		}
 	}
@@ -141,7 +142,9 @@ public class PlayerAbilityHotbar : MonoBehaviour
 			UIHotbar.SetCooldownSlider(i, abilities[i].cooldownTime);
 		}
 		else
-			Debug.Log("Not enough mana!");
+		{
+			// Debug.Log("Not enough mana!");
+		}
 	}
 
 	private void ChargeAttackHandler(bool isPressed)
@@ -150,11 +153,15 @@ public class PlayerAbilityHotbar : MonoBehaviour
 		{
             chargeTime += Time.deltaTime;
 			chargeParticles.SetActive(true);
-        }
+			if (chargeTime == 0.0f)
+				flash.TintThenFlash(Color.purple, Color.white, chargeThreshold, 0.25f);
+		}
 		else
 		{
             chargeTime = 0.0f;
 			chargeParticles.SetActive(false);
+			flash.StopTint();
+			flash.StopFlash();
         }
 	}
 }

@@ -58,7 +58,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 5b03cccac1867e041993fcc842ad842f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -223,9 +223,9 @@ GameObject:
   - component: {fileID: 8135673939060699281}
   - component: {fileID: 3132520576466806941}
   - component: {fileID: 6813893143859127758}
+  - component: {fileID: 6586905199821503859}
   - component: {fileID: 1527712259621271311}
   - component: {fileID: 1832593350788887559}
-  - component: {fileID: 7100097870653872756}
   - component: {fileID: 6213272015762902198}
   - component: {fileID: 444042628933280672}
   - component: {fileID: 4607930021467359773}
@@ -342,6 +342,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShadowPlacer
   distance: 0.5
   scale: {x: 1, y: 1}
+--- !u!114 &6586905199821503859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6670262877560284828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0119b042e917ea4d97f411895ed48f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlashControllerV2
+  spriteRenderer: {fileID: 7812250421868335421}
 --- !u!114 &1527712259621271311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,7 +370,7 @@ MonoBehaviour:
   movement: {fileID: 6213272015762902198}
   health: {fileID: 1832593350788887559}
   knockback: {fileID: 444042628933280672}
-  flashController: {fileID: 7100097870653872756}
+  flash: {fileID: 6586905199821503859}
   healthBarUI: {fileID: 3506663677476279082}
   destroyAfterSeconds: 1
   contactDamage: 15
@@ -374,23 +387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   maxHealth: 40
-  hurtCooldown: 0.5
---- !u!114 &7100097870653872756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6670262877560284828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 468aa4e18de4e2b4589e86e48f9f8b19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FlashController
-  color: {r: 1, g: 1, b: 1, a: 1}
-  sprRenderer: {fileID: 7812250421868335421}
-  flashMaterial: {fileID: 2100000, guid: 5b03cccac1867e041993fcc842ad842f, type: 2}
-  duration: 0.5
+  hurtCooldown: 0.375
 --- !u!114 &6213272015762902198
 MonoBehaviour:
   m_ObjectHideFlags: 0

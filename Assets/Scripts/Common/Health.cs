@@ -28,6 +28,11 @@ public class Health : MonoBehaviour
 		get { return hurtCooldown; }
 	}
 
+	public float Cooldown
+	{
+		get { return hurtCooldownTimer; }
+	}
+
 	private void Awake()
 	{
 		maxHealth = Mathf.Max(maxHealth, 1);
@@ -38,7 +43,7 @@ public class Health : MonoBehaviour
 	private void Update()
 	{
 		if (hurtCooldownTimer > 0.0f)
-			hurtCooldownTimer -= Time.deltaTime;
+			hurtCooldownTimer = Mathf.Max(hurtCooldownTimer - Time.deltaTime, 0.0f);
 	}
 
 	public virtual void TakeDamage(int damage)
