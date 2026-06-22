@@ -151,10 +151,10 @@ public class PlayerAbilityHotbar : MonoBehaviour
 	{
 		if (isPressed)
 		{
-            chargeTime += Time.deltaTime;
 			chargeParticles.SetActive(true);
 			if (chargeTime == 0.0f)
 				flash.TintThenFlash(Color.purple, Color.white, chargeThreshold, 0.25f);
+			chargeTime += Time.deltaTime;
 		}
 		else
 		{

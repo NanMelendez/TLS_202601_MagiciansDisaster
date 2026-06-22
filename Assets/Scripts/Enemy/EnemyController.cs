@@ -36,8 +36,6 @@ public class EnemyController : MonoBehaviour
 			if (spawner)
 				spawner.EnemyDeathSignal(destroyAfterSeconds + 1.0f);
 		}
-
-		// Debug.Log($"Enemigo: {name} | Velocidad: {GetComponent<Rigidbody2D>().linearVelocity}");
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
@@ -48,7 +46,6 @@ public class EnemyController : MonoBehaviour
 			{
 				PlayerProjectile pp = collision.gameObject.GetComponent<PlayerProjectile>();
 				lastHitPos = collision.transform.position;
-				// TakeDamage(pp.Damage, pp.Knockback);
 
 				switch (pp.effectType)
 				{

@@ -134,7 +134,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5330828114959222805, guid: 01f758626f5ead74e825396468d572b9, type: 3}
   m_PrefabInstance: {fileID: 9125082540041598778}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 867270482}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
@@ -3763,6 +3763,35 @@ Transform:
   - {fileID: 944359949}
   m_Father: {fileID: 1519070534}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &633583217 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1756713107889515491, guid: 01f758626f5ead74e825396468d572b9, type: 3}
+  m_PrefabInstance: {fileID: 9125082540041598778}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &633583222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633583217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.PixelPerfectCamera
+  m_ComponentVersion: 1
+  m_AssetsPPU: 16
+  m_RefResolutionX: 320
+  m_RefResolutionY: 224
+  m_CropFrame: 0
+  m_GridSnapping: 0
+  m_FilterMode: 0
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1 &713015808
 GameObject:
   m_ObjectHideFlags: 0
@@ -4192,6 +4221,23 @@ Transform:
   - {fileID: 324638580}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &867270482 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3014698156226753579, guid: 01f758626f5ead74e825396468d572b9, type: 3}
+  m_PrefabInstance: {fileID: 9125082540041598778}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &867270485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867270482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachinePixelPerfect
 --- !u!4 &944359949 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7160156788180944597, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
@@ -17341,10 +17387,20 @@ PrefabInstance:
       propertyPath: Target.TrackingTarget
       value: 
       objectReference: {fileID: 944359949}
+    - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
+      propertyPath: orthographic size
+      value: 2.365
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1756713107889515491, guid: 01f758626f5ead74e825396468d572b9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 633583222}
+    - targetCorrespondingSourceObject: {fileID: 3014698156226753579, guid: 01f758626f5ead74e825396468d572b9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 867270485}
   m_SourcePrefab: {fileID: 100100000, guid: 01f758626f5ead74e825396468d572b9, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

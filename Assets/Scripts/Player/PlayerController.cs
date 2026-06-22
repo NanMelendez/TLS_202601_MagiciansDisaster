@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private Score score;
 	[SerializeField] private Knockback knockback;
 	[SerializeField] private PlayerMana mana;
-	// [SerializeField] private FlashController flashController;
 	[SerializeField] private FlashController flash;
 	[SerializeField] private PlayerAbilityHotbar hotbar;
 	[SerializeField] private float destroyAfterSeconds;
@@ -21,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
 
 	[NonSerialized] public GameplayState state;
+
+	private Vector2 lastHitPos;
 
 	private bool isAlive;
 
@@ -59,9 +60,9 @@ public class PlayerController : MonoBehaviour
 			if (health.Cooldown == 0.0f)
 			{
 				EnemyController ec = collision.gameObject.GetComponent<EnemyController>();
-				health.TakeDamage(ec.contactDamage);
-				StartCoroutine(AllowKnocback(collision.transform.position - transform.position, health.HurtCooldown, 50.0f));
-				flash.Flash(Color.red, 0.25f);
+				lastHitPos = collision.transform.position;
+
+				TakeDamage(ec.contactDamage, 25.0f, 0.25f, Color.red);
 			}
 		}
     }
@@ -83,12 +84,24 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-	IEnumerator AllowKnocback(Vector2 direction, float seconds, float force)
+	public void TakeDamage(int dmg, float knockback, float flashTime, Color color)
+	{
+		health.TakeDamage(dmg);
+		flash.Flash(color, flashTime);
+		StartCoroutine(AllowKnocback(health.HurtCooldown, knockback));
+	}
+
+	private void ApplyKnockback(Vector2 hitPos, float force)
+	{
+		knockback.Execute(((Vector2)transform.position - hitPos).normalized, force);
+	}
+
+	IEnumerator AllowKnocback(float seconds, float knockback)
 	{
 		movement.enabled = false;
-		yield return new WaitForSeconds(0.02f);
+		yield return null;
 
-        knockback.Execute(direction, force);
+        ApplyKnockback(lastHitPos, knockback);
 
         yield return new WaitForSeconds(seconds);
 		movement.enabled = true;

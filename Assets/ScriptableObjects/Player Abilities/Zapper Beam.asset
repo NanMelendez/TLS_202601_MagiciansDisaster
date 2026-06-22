@@ -17,11 +17,11 @@ MonoBehaviour:
   activeTime: 0.2
   manaCost: 10
   refImage: {fileID: 918378154454207675, guid: 8e93307dbf6a10841a132740f2adfc18, type: 3}
-  damage: 15
+  damage: 10
   knockback: 10
   effectType: 3
   effectDuration: 4
   projectile: {fileID: 942468747175027456, guid: be7ca83342ad4324d99d85a483495d2d, type: 3}
   speed: 10
   lifetime: 10
-  spawnOffset: 1.5
+  spawnOffset: 1

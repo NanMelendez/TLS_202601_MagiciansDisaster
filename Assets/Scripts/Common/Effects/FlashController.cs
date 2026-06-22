@@ -44,7 +44,6 @@ public class FlashController : MonoBehaviour
 		{
 			StopCoroutine(currFlashCoroutine);
 			SetFactor(0.0f);
-			currFlashCoroutine = null;
 		}
 	}
 
@@ -54,7 +53,6 @@ public class FlashController : MonoBehaviour
 		{
 			StopCoroutine(currTintCoroutine);
 			SetFactor(0.0f);
-			currTintCoroutine = null;
 		}
 	}
 
@@ -86,6 +84,7 @@ public class FlashController : MonoBehaviour
 	private IEnumerator TintCoroutine(float time, bool offOnFinished = false)
 	{
 		float elapsed = 0.0f;
+		SetFactor(0.0f);
 
 		while (elapsed < time)
 		{
