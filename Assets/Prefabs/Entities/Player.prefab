@@ -4941,7 +4941,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.27}
+  m_Offset: {x: 0, y: -0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4951,7 +4951,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &4015071952851868858
 MonoBehaviour:
@@ -4965,8 +4965,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb750bae3577ca46871c70d03ed8ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShadowPlacer
-  distance: 0.5
-  scale: {x: 0.65, y: 0.65}
+  distance: 1
+  scale: {x: 1, y: 1}
 --- !u!114 &5506495435422998364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5017,7 +5017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 100
-  hurtCooldown: 0.25
+  hurtCooldown: 0.75
   statsUI: {fileID: 0}
 --- !u!114 &8478675964179521000
 MonoBehaviour:
