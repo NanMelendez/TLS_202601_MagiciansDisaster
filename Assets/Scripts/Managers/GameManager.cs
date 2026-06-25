@@ -1,6 +1,7 @@
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -65,5 +66,15 @@ public class GameManager : MonoBehaviour
 		UIManager.State = state;
 		pController.state = state;
 		Time.timeScale = 1.0f;
+	}
+
+	public void Retry()
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	}
+
+	public void GoToMenu()
+	{
+		SceneManager.LoadScene("Menu");
 	}
 }

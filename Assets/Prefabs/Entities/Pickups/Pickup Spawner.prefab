@@ -121,10 +121,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a84280604339c2846a34d8e4caa32787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupSpawner
-  instances: []
-  spawnInterval: 5
-  spawnLimit: 8
-  radius: 5
+  instances:
+  - {fileID: 83472527939301841, guid: 9ae360e983162ab4abc6b537c83c240c, type: 3}
+  - {fileID: 7902371632787038148, guid: b964c136e29d7e647aa8ca0fff482777, type: 3}
+  spawnInterval: 2
+  spawnLimit: 3
+  radius: 3
+  anchor: {fileID: 0}
 --- !u!1 &1250131289766589710
 GameObject:
   m_ObjectHideFlags: 0
