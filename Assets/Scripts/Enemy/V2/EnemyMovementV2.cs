@@ -1,0 +1,97 @@
+using System;
+using UnityEngine;
+
+public class EnemyMovementV2 : MonoBehaviour
+{
+    [SerializeField] private Rigidbody2D rb2d;
+    [SerializeField] private EnemyFOVV2 fov;
+
+    [NonSerialized] public float speed;
+    private EnemyControllerV2 controller;
+    private Vector2 direction;
+    private float directionChangeCooldown = 0.0f;
+    private EnemyActionSpot actionOnSpot;
+
+    public Vector2 Direction
+    {
+        get { return direction; }
+    }
+
+    private void Awake()
+    {
+        direction = new Vector2(0.0f, 1.0f);
+    }
+
+    private void OnDisable()
+    {
+        rb2d.linearVelocity = Vector2.zero;
+    }
+
+    private void Update()
+    {
+        if (!fov.CanSeePlayer)
+            HandleRandomDirection();
+
+        if (controller != null)
+            HandlePlayerTargeted();
+    }
+
+    private void FixedUpdate()
+    {
+        if (controller != null)
+            // Debug.Log($"Is controller null? {controller == null}");
+            if (controller.state != EnemyState.KNOCKBACK)
+                SetVelocity();
+    }
+
+    public void Init(EnemyControllerV2 controller, EnemyActionSpot actionOnSpot, float speed)
+    {
+        this.controller = controller;
+        this.actionOnSpot = actionOnSpot;
+        this.speed = speed;
+        fov.Init(controller.data.visionAngle, controller.data.visionRadius);
+    }
+
+    private void HandleRandomDirection()
+    {
+        directionChangeCooldown -= Time.deltaTime;
+        if (directionChangeCooldown <= 0.0f)
+        {
+            float changeAngle = UnityEngine.Random.Range(-90.0f, 90.0f);
+            Quaternion rotation = Quaternion.AngleAxis(changeAngle, transform.forward);
+            direction = rotation * direction;
+            fov.AimAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+            directionChangeCooldown = UnityEngine.Random.Range(1.0f, 5.0f);
+        }
+    }
+
+    private void HandlePlayerTargeted()
+    {
+        if (fov.CanSeePlayer)
+        {
+            direction = Vector2.MoveTowards(direction, fov.Direction, fov.turnSpeed * Time.deltaTime);
+
+            switch (actionOnSpot)
+            {
+                case EnemyActionSpot.Retreat:
+                    direction *= -1.0f;
+                    controller.state = EnemyState.FLEEING;
+                    break;
+                default:
+                case EnemyActionSpot.Follow:
+                    controller.state = EnemyState.CHASING;
+                    break;
+            }
+        }
+        else
+        {
+            controller.state = EnemyState.IDLE;
+        }
+    }
+
+    private void SetVelocity()
+    {
+        rb2d.linearVelocity = direction * speed * (controller.state == EnemyState.IDLE ? 0.25f : 1.0f);
+    }
+}

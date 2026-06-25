@@ -59,10 +59,14 @@ public class PlayerController : MonoBehaviour
         {
 			if (health.Cooldown == 0.0f)
 			{
-				EnemyController ec = collision.gameObject.GetComponent<EnemyController>();
-				lastHitPos = collision.transform.position;
+				EnemyAttacker eAtk = collision.gameObject.GetComponent<EnemyAttacker>();
 
-				TakeDamage(ec.contactDamage, 25.0f, 0.25f, Color.red);
+                Debug.Log($"Attacked! -{eAtk.Damage} HP");
+
+                // EnemyController ec = collision.gameObject.GetComponent<EnemyController>();
+                lastHitPos = collision.transform.position;
+
+				TakeDamage(eAtk.Damage, 25.0f, 0.25f, Color.red);
 			}
 		}
     }

@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2194370966936200411
 Transform:
   m_ObjectHideFlags: 0
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9027669979793408819}
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb750bae3577ca46871c70d03ed8ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShadowPlacer
-  distance: 0.5
+  distance: 0.25
   scale: {x: 1, y: 1}
 --- !u!114 &7553285707399419713
 MonoBehaviour:
@@ -137,9 +137,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   enemyInstance: {fileID: 6670262877560284828, guid: 6793537e2bf87dc46ab0fed80df75d7b, type: 3}
-  spawnCooldown: 0.75
-  enemyLimit: 10
-  spawnRadius: 5
+  spawnCooldown: 1
+  enemyLimit: 4
+  spawnRadius: 6.84
   anchor: {fileID: 0}
 --- !u!1 &6663519877173422924
 GameObject:
@@ -222,8 +222,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.1981132, g: 0.18596475, b: 0.18596475, a: 1}
+  m_Sprite: {fileID: -5816642994671486895, guid: df852b7ad2458a149925596624a093e4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

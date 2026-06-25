@@ -11,11 +11,20 @@ public class Health : MonoBehaviour
 	public int MaxHealth
 	{
 		get {  return maxHealth; }
+		set
+		{
+			maxHealth = Mathf.Max(value, 1);
+			currentHealth = maxHealth;
+		}
 	}
 
 	public int CurrentHealth
 	{
 		get { return currentHealth; }
+		set
+		{
+			currentHealth = Mathf.Clamp(value, 0, maxHealth);
+		}
 	}
 
 	public bool IsAlive
@@ -26,6 +35,10 @@ public class Health : MonoBehaviour
 	public float HurtCooldown
 	{
 		get { return hurtCooldown; }
+		set
+		{
+			hurtCooldown = Mathf.Max(value, 0.01f);
+		}
 	}
 
 	public float Cooldown
