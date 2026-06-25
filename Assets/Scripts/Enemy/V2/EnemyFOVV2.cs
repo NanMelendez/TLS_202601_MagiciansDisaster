@@ -15,6 +15,9 @@ public class EnemyFOVV2 : Aim
     private bool seesWall = false;
     private float aimAngle = 0.0f;
 
+    private Vector2 targetLocation = new Vector2(0.0f, 0.0f);
+    private GameObject playerRef;
+
     public bool CanSeePlayer
     {
         get { return canSeePlayer; }
@@ -35,6 +38,19 @@ public class EnemyFOVV2 : Aim
         {
             aimAngle = value;
             direction = Quaternion.AngleAxis(aimAngle, Vector3.forward) * Vector3.right;
+        }
+    }
+
+    private void Awake()
+    {
+        playerRef = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    public Vector2 TargetLocation
+    {
+        get
+        {
+            return targetLocation;
         }
     }
 
@@ -90,6 +106,8 @@ public class EnemyFOVV2 : Aim
 
                 if (!Physics2D.Raycast(transform.position, direction, distance, wallLayer))
                 {
+                    targetLocation = rangeCheck[0].transform.position;
+
                     canSeePlayer = true;
                     this.direction = direction;
                     this.position = target.position;
@@ -112,7 +130,7 @@ public class EnemyFOVV2 : Aim
             Vector2 direction = (target.position - transform.position).normalized;
 
             if (Vector2.Angle(this.direction, direction) < angle / 2)
-                seesWall = true;
+seesWall = true;
         }
         else if (seesWall)
         {

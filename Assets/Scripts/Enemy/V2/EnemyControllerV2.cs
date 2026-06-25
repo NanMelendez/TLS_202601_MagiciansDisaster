@@ -8,7 +8,7 @@ public class EnemyControllerV2 : MonoBehaviour
     [SerializeField] private Health health;
     [SerializeField] private EnemyMovementV2 movement;
     [SerializeField] private Knockback knockback;
-    [SerializeField] private EnemyAttacker attacker;
+    public EnemyAttacker attacker;
     [SerializeField] private FlashController flash;
     [SerializeField] private EnemyHealthBarUI hbUI;
 
@@ -21,11 +21,6 @@ public class EnemyControllerV2 : MonoBehaviour
 
     [NonSerialized] public EnemyState state = EnemyState.IDLE;
     [NonSerialized] public EnemySpawnerV2 spawner = null;
-
-    private void Awake()
-    {
-        // Init();
-    }
 
     private void Update()
     {
@@ -78,7 +73,7 @@ public class EnemyControllerV2 : MonoBehaviour
         health.MaxHealth = data.health;
         health.HurtCooldown = data.hurtCooldown;
         movement.Init(this, data.actionOnSpot, data.speed);
-        attacker.Init(data.damage, data.effectType);
+        attacker.Init(data.damage, data.effectType, data.attackType, data.rangedAttackInterval);
         destroyAfterSeconds = data.destroyAfterSeconds;
         flash.Flash(Color.lavenderBlush, 1.5f);
     }

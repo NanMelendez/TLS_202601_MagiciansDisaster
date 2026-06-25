@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyMovementV2 : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb2d;
-    [SerializeField] private EnemyFOVV2 fov;
+    public EnemyFOVV2 fov;
 
     [NonSerialized] public float speed;
     private EnemyControllerV2 controller;
@@ -15,6 +15,14 @@ public class EnemyMovementV2 : MonoBehaviour
     public Vector2 Direction
     {
         get { return direction; }
+    }
+
+    public Vector2 Target
+    {
+        get
+        {
+            return fov.TargetLocation;
+        }
     }
 
     private void Awake()
@@ -33,7 +41,10 @@ public class EnemyMovementV2 : MonoBehaviour
             HandleRandomDirection();
 
         if (controller != null)
+        {
             HandlePlayerTargeted();
+            HandleAttack();
+        }
     }
 
     private void FixedUpdate()
@@ -87,6 +98,14 @@ public class EnemyMovementV2 : MonoBehaviour
         else
         {
             controller.state = EnemyState.IDLE;
+        }
+    }
+
+    private void HandleAttack()
+    {
+        if (fov.CanSeePlayer && controller.attacker.attackType == EnemyAtkType.Ranged)
+        {
+            controller.attacker.Fire(fov.TargetLocation - (Vector2)transform.position, 0.5f);
         }
     }
 

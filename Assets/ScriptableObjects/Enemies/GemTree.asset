@@ -20,5 +20,6 @@ MonoBehaviour:
   attackType: 1
   effectType: 0
   actionOnSpot: 1
+  rangedAttackInterval: 1.25
   visionAngle: 210
   visionRadius: 7

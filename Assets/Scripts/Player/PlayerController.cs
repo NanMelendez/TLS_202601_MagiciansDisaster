@@ -71,6 +71,20 @@ public class PlayerController : MonoBehaviour
 		}
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("EnemyProjectile"))
+        {
+            if (health.Cooldown == 0.0f)
+            {
+                EnemyProjectile eProj = collision.gameObject.GetComponent<EnemyProjectile>();
+                lastHitPos = collision.transform.position;
+
+                TakeDamage(eProj.Damage, eProj.Knockback, 0.25f, Color.red);
+            }
+        }
+    }
+
     private void CheckState()
 	{
 		switch (state)

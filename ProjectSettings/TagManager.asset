@@ -10,6 +10,7 @@ TagManager:
   - Coin
   - Spawner
   - Wall
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX

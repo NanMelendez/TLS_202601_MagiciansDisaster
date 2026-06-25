@@ -14,6 +14,7 @@ public class EnemyData : ScriptableObject
     public EnemyAtkType attackType = EnemyAtkType.Melee;
     public AttackEffectType effectType = AttackEffectType.None;
     public EnemyActionSpot actionOnSpot = EnemyActionSpot.Follow;
+    public float rangedAttackInterval;
     
     [Header("Vision range")]
     [Range(1.0f, 360.0f)] public float visionAngle;
