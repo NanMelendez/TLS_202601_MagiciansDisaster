@@ -5121,9 +5121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7c94f31bd682754ca71c4a59039f0f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawnerV2
-  instances:
-  - {fileID: 1425505468207329247, guid: ac4717183deb6ff48abae33987999885, type: 3}
-  cooldown: 0.5
+  instances: []
+  cooldown: 1
   limit: 1
   radius: 3
   anchor: {fileID: 0}
