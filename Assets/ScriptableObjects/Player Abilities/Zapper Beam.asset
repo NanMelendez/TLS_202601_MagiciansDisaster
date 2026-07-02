@@ -16,7 +16,7 @@ MonoBehaviour:
   cooldownTime: 0.75
   activeTime: 0.2
   manaCost: 10
-  refImage: {fileID: 918378154454207675, guid: 8e93307dbf6a10841a132740f2adfc18, type: 3}
+  refImage: {fileID: -7389164557081070106, guid: 80ac1165e9c6ec8499255aaa00943cd1, type: 3}
   damage: 10
   knockback: 10
   effectType: 3
