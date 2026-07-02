@@ -12,13 +12,13 @@ public class UIStatsHandler : MonoBehaviour
     public void UpdateHealth(int currentHealth, int maxHealth)
     {
         healthSlider.value = (float)currentHealth / (float)maxHealth;
-        healthText.text = $"HP\n{currentHealth} / {maxHealth}";
+        healthText.text = $"{currentHealth} / {maxHealth}";
     }
 
     public void UpdateMana(int currentMana, int maxMana)
     {
 
         manaSlider.value = (float)currentMana / (float)maxMana;
-        manaText.text = $"MANA\n{currentMana} / {maxMana}";
+        manaText.text = $"{currentMana} / {maxMana}";
     }
 }
