@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class PlayerProjectile : MonoBehaviour
@@ -8,6 +9,7 @@ public class PlayerProjectile : MonoBehaviour
 	[SerializeField] private Collider2D c2d;
 	[SerializeField] private AttackAnimation atkAnimation;
 	[SerializeField] private float lifeBeforeDestroy;
+	[SerializeField] private CinemachineImpulseSource impulseSrc;
 
 	private int damage;
 	private float knockback;
@@ -16,10 +18,19 @@ public class PlayerProjectile : MonoBehaviour
 	[NonSerialized] public AttackEffectType effectType;
 	[NonSerialized] public float effectDuration;
 
+	private void Awake()
+	{
+		impulseSrc.enabled = false;
+	}
+
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.CompareTag("Enemy") || collision.CompareTag("Wall"))
-            StartCoroutine(blastBeforeDeath(lifeBeforeDestroy));
+		{
+			StartCoroutine(blastBeforeDeath(lifeBeforeDestroy));
+			impulseSrc.enabled = true;
+			CameraShakeManager.instance.Shake(impulseSrc, knockback / 7.5f);
+		}
     }
 
 	public int Damage

@@ -11,6 +11,7 @@ public class EnemyControllerV2 : MonoBehaviour
     public EnemyAttacker attacker;
     [SerializeField] private FlashController flash;
     [SerializeField] private EnemyHealthBarUI hbUI;
+    [SerializeField] private EnemyLoot loot;
 
     private EnemyAtkType attackType;
     private AttackEffectType effectType;
@@ -28,11 +29,15 @@ public class EnemyControllerV2 : MonoBehaviour
         {
             Destroy(gameObject, destroyAfterSeconds);
             isAlive = false;
+            movement.StopVelocity();
             movement.enabled = false;
 
             if (spawner)
                 spawner.EnemyDeathSignal(destroyAfterSeconds + 1.0f);
-        }
+
+            if (loot)
+                loot.Drop();
+		}
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

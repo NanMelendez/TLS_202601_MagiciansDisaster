@@ -30,11 +30,6 @@ public class EnemyMovementV2 : MonoBehaviour
         direction = new Vector2(0.0f, 1.0f);
     }
 
-    private void OnDisable()
-    {
-        rb2d.linearVelocity = Vector2.zero;
-    }
-
     private void Update()
     {
         if (!fov.CanSeePlayer)
@@ -61,6 +56,11 @@ public class EnemyMovementV2 : MonoBehaviour
         this.actionOnSpot = actionOnSpot;
         this.speed = speed;
         fov.Init(controller.data.visionAngle, controller.data.visionRadius);
+    }
+
+    public void StopVelocity()
+    {
+        rb2d.linearVelocity = Vector2.zero;
     }
 
     private void HandleRandomDirection()

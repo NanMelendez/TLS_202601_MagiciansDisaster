@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 2812019590771157807}
   - component: {fileID: 5051920056317860002}
   - component: {fileID: 8325785248937078559}
+  - component: {fileID: 6825677637811221031}
   m_Layer: 6
   m_Name: Gem Tree
   m_TagString: Enemy
@@ -151,6 +152,7 @@ MonoBehaviour:
   attacker: {fileID: 8325785248937078559}
   flash: {fileID: 5390418875504450083}
   hbUI: {fileID: 2009332688882533874}
+  loot: {fileID: 6825677637811221031}
 --- !u!114 &7999802160444647231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,6 +255,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttacker
   projectileInstance: {fileID: 306851046910433123, guid: f0c00736481241e49bcea7577ad16fc6, type: 3}
   rangedInterval: 1
+--- !u!114 &6825677637811221031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427200503449057522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51af43a9da5388c42abc89212dd304ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyLoot
+  lootInstances:
+  - {fileID: 83472527939301841, guid: 9ae360e983162ab4abc6b537c83c240c, type: 3}
+  - {fileID: 7902371632787038148, guid: b964c136e29d7e647aa8ca0fff482777, type: 3}
+  maxQuantity: 6
+  radius: 0.92
 --- !u!1 &985021600465031398
 GameObject:
   m_ObjectHideFlags: 0

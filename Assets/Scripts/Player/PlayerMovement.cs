@@ -50,4 +50,9 @@ public class PlayerMovement : MonoBehaviour
 	{
 		get { return direction != Vector2.zero; }
 	}
+
+	public void StopVelocity()
+	{
+		rb2d.linearVelocity = Vector2.zero;
+	}
 }

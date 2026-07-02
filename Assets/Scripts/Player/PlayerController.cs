@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private FlashController flash;
 	[SerializeField] private PlayerAbilityHotbar hotbar;
 	[SerializeField] private float destroyAfterSeconds;
-	[SerializeField] private Rigidbody2D rb2d;
 	[SerializeField] private BoxCollider2D playerCollider;
 	[SerializeField] private Animator spriteAnimator;
 
@@ -42,7 +41,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if (!health.IsAlive && isAlive)
 		{
-			rb2d.linearVelocity = Vector2.zero;
+			movement.StopVelocity();
 			playerCollider.enabled = false;
 			Destroy(gameObject, destroyAfterSeconds);
 			isAlive = false;

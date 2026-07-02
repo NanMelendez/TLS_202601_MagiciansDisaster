@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 9179645259861975765}
   - component: {fileID: 4697017826545351128}
   - component: {fileID: 1468885726192923354}
+  - component: {fileID: 1152982922043280165}
   m_Layer: 6
   m_Name: Bat Eye
   m_TagString: Enemy
@@ -235,6 +236,7 @@ MonoBehaviour:
   attacker: {fileID: 1468885726192923354}
   flash: {fileID: 4847912388517611216}
   hbUI: {fileID: 7138085121815097454}
+  loot: {fileID: 1152982922043280165}
 --- !u!114 &8425299853690886109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,6 +338,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttacker
   projectileInstance: {fileID: 0}
+  rangedInterval: 1
+--- !u!114 &1152982922043280165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425505468207329247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51af43a9da5388c42abc89212dd304ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyLoot
+  lootInstances:
+  - {fileID: 5065045135709578060, guid: 4458d3f88de360749bc7193dd96eec53, type: 3}
+  - {fileID: 697093383861917587, guid: ba60f328b93e92c47af90ba9580679d4, type: 3}
+  maxQuantity: 5
+  radius: 1.15
 --- !u!1 &2419643557934675957
 GameObject:
   m_ObjectHideFlags: 0
