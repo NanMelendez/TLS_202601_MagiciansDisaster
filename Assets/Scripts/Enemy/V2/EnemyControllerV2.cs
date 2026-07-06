@@ -92,6 +92,11 @@ public class EnemyControllerV2 : MonoBehaviour
         StartCoroutine(AllowKnocback(health.HurtCooldown, knockback));
     }
 
+    public void TakeLaserDamage(int dmg, float knockback, float flashTime, Color color)
+    {
+        TakeDamage(dmg, knockback, flashTime, color);
+    }
+
     private IEnumerator AllowKnocback(float seconds, float knockback)
     {
         movement.enabled = false;
