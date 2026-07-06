@@ -5001,7 +5001,6 @@ MonoBehaviour:
   flash: {fileID: 5506495435422998364}
   hotbar: {fileID: 8580527357646141192}
   destroyAfterSeconds: 2.5
-  rb2d: {fileID: 2214563724376581330}
   playerCollider: {fileID: 6294523418204115362}
   spriteAnimator: {fileID: 5736912110462041700}
 --- !u!114 &1236614887801156001
@@ -5092,6 +5091,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 152a9dea8eff6614f87c0648e1397447, type: 2}
   - {fileID: 11400000, guid: 373fd797c593a404bb402885bf8943bd, type: 2}
   - {fileID: 11400000, guid: aa26736bb341fcc4ab93f0d30fa7a609, type: 2}
+  - {fileID: 11400000, guid: 0c911514d1f26dc45a4a282a78583ce0, type: 2}
   - {fileID: 11400000, guid: 4fdd40ac575d88d4394821509c5eb6f4, type: 2}
   UIHotbar: {fileID: 0}
   chargeThreshold: 5

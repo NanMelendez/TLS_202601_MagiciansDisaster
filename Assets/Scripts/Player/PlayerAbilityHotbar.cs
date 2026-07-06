@@ -8,7 +8,7 @@ public class PlayerAbilityHotbar : MonoBehaviour
 	[SerializeField] private PlayerMana mana;
 	[SerializeField] private InputActionReference activator;
 	[SerializeField] private InputActionReference charger;
-	[SerializeField] private List<Ability> abilities = new List<Ability>();
+	[SerializeField] private List<Ability> abilities = new();
 	[SerializeField] private UIAbilityHotbar UIHotbar;
 	[SerializeField] private float chargeThreshold;
 	[SerializeField] private UIStatsHandler UIHandler;
@@ -16,9 +16,9 @@ public class PlayerAbilityHotbar : MonoBehaviour
 	[SerializeField] private FlashController flash;
 	
 	private int currentAbilityIdx = 0;
-	private List<AbilityState> states = new List<AbilityState>();
-	private List<float> activeTimes = new List<float>();
-	private List<float> cooldownTimes = new List<float>();
+	private List<AbilityState> states = new();
+	private List<float> activeTimes = new();
+	private List<float> cooldownTimes = new();
 
 	private float chargeTime;
 
@@ -70,7 +70,7 @@ public class PlayerAbilityHotbar : MonoBehaviour
 		if (charger)
 			ChargeAttackHandler(charger.action.IsPressed());
 		if (activator)
-			UpdateAbilitiesStatus(activator.action.IsPressed());
+			UpdateAbilitiesStatus(activator.action.WasPressedThisFrame());
 	}
 
 	private void ControlScroll()
@@ -95,7 +95,6 @@ public class PlayerAbilityHotbar : MonoBehaviour
 
 		if (scrollY != 0.0f)
 		{
-			// Debug.Log($"Now using {abilities[currentAbilityIdx].name}");
 			UIHotbar.UpdateSelection(currentAbilityIdx);
 		}
 	}

@@ -1,24 +1,25 @@
 using System;
+using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
 
 public class PlayerLaser : MonoBehaviour
 {
     [SerializeField] LineRenderer lineRenderer;
-    [Min(0.01f)] public float laserRange = 0.01f;
     [SerializeField] private LayerMask wallLayer;
-    [SerializeField] private AttackAnimation atkAnimation;
     [SerializeField] private CinemachineImpulseSource impulseSrc;
 
     private int damage;
     private float knockback;
-    private Vector2 direction;
+    private bool startedAttack = false;
 
     [NonSerialized] public AttackEffectType effectType;
     [NonSerialized] public float effectDuration;
-    [NonSerialized] public bool isHoldingAttack = true;
+    [NonSerialized] public PlayerAbilityHotbar atkHotbar;
+    [NonSerialized] public PlayerAim pAim;
+	[NonSerialized] public float laserRange = 0.01f;
 
-    public int Damage
+	public int Damage
     {
         get { return damage; }
     }
@@ -30,13 +31,18 @@ public class PlayerLaser : MonoBehaviour
 
     private void Update()
     {
-        if (!isHoldingAttack)
+        if (!atkHotbar.IsAttacking)
         {
             Destroy(gameObject);
         }
+
+        if (startedAttack)
+        {
+            LaserStuff();
+		}
     }
 
-    public void Init(int damage, float knockForce, Vector2 direction, float effectDuration, bool charged, AttackEffectType effectType)
+    public void Init(int damage, float knockForce, PlayerAim pAim, float maxRange, float effectDuration, bool charged, AttackEffectType effectType, PlayerAbilityHotbar atkHotbar)
     {
         if (charged)
             transform.localScale = Vector3.one * 2.5f;
@@ -44,14 +50,16 @@ public class PlayerLaser : MonoBehaviour
         this.knockback = knockForce;
         this.effectType = effectType;
         this.effectDuration = effectDuration;
-        this.direction = direction;
+        this.pAim = pAim;
+        this.atkHotbar = atkHotbar;
+        this.laserRange = maxRange;
 
-        LaserStuff();
+        startedAttack = true;
     }
 
     private void LaserStuff()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, laserRange, wallLayer);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, pAim.Direction, laserRange, wallLayer);
 
         lineRenderer.SetPosition(0, transform.position);
 
@@ -64,11 +72,11 @@ public class PlayerLaser : MonoBehaviour
                 hit.collider.GetComponent<EnemyControllerV2>().TakeLaserDamage(damage, knockback, 0.05f, Color.red);
             }
 
-            impulseSrc.GenerateImpulseAt(hit.point, Vector3.one * knockback / 7.5f);
+            impulseSrc.GenerateImpulseAt(hit.point, Vector3.one * 0.1f);
         }
         else
         {
-            lineRenderer.SetPosition(1, transform.position + (Vector3)direction * laserRange);
+            lineRenderer.SetPosition(1, transform.position + (Vector3)pAim.Direction * laserRange);
         }
     }
 }
