@@ -11,6 +11,7 @@ TagManager:
   - Spawner
   - Wall
   - EnemyProjectile
+  - BulletSafeWall
   layers:
   - Default
   - TransparentFX
