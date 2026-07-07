@@ -4,6 +4,8 @@ public class Health : MonoBehaviour
 {
 	[SerializeField] protected int maxHealth;
 	[SerializeField] private float hurtCooldown;
+	[SerializeField] private AudioClip healSFX;
+	[SerializeField] private AudioClip hurtSFX;
 
     protected int currentHealth;
 	private float hurtCooldownTimer;
@@ -23,6 +25,11 @@ public class Health : MonoBehaviour
 		get { return currentHealth; }
 		set
 		{
+			if (value < currentHealth && hurtSFX)
+				SFXManager.instance.PlayClip(hurtSFX, transform, 1.0f);
+			else if (value > currentHealth && healSFX)
+				SFXManager.instance.PlayClip(healSFX, transform, 1.0f);
+
 			currentHealth = Mathf.Clamp(value, 0, maxHealth);
 		}
 	}
@@ -64,12 +71,18 @@ public class Health : MonoBehaviour
 		if (hurtCooldownTimer > 0.0f)
 			return;
 
+		if (hurtSFX)
+			SFXManager.instance.PlayClip(hurtSFX, transform, 1.0f);
+
 		currentHealth = Mathf.Max(currentHealth - damage, 0);
 		hurtCooldownTimer = hurtCooldown;
 	}
 
 	public virtual void Heal(int health)
 	{
+		if (healSFX)
+			SFXManager.instance.PlayClip(healSFX, transform, 1.0f);
+
 		currentHealth = Mathf.Min(currentHealth + health, maxHealth);
 	}
 }

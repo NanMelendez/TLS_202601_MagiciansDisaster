@@ -95,6 +95,7 @@ public class PlayerAbilityHotbar : MonoBehaviour
 
 		if (scrollY != 0.0f)
 		{
+			SFXManager.instance.PlayClip(abilities[currentAbilityIdx].abilityInvokeSFX, transform, 1.0f);
 			UIHotbar.UpdateSelection(currentAbilityIdx);
 		}
 	}

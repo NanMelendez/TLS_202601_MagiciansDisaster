@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4292149b319cb94fb0a21840b6e08f2, type: 3}
   m_Name: MegaBlast
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAtkRanged
-  name: Mega Blaster
+  name: Sparkle Blaster
   cooldownTime: 3
   activeTime: 0.1
   manaCost: 30
   refImage: {fileID: 1229794671371557974, guid: 80ac1165e9c6ec8499255aaa00943cd1, type: 3}
+  abilityInvokeSFX: {fileID: 8300000, guid: 0ad7a11145af37c41b5ae9cc1cda3823, type: 3}
+  abilitySpawnSFX: {fileID: 8300000, guid: 3a6f7cf03a32a8f4bbecdc025b52cb9d, type: 3}
+  abilityLandSFX: {fileID: 8300000, guid: 6573ad83c6e6aa942b9750a9fec28054, type: 3}
   damage: 50
   knockback: 40
   effectType: 0

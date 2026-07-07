@@ -13,6 +13,8 @@ public class PlayerProjectile : MonoBehaviour
 
 	private int damage;
 	private float knockback;
+
+	private AudioClip hitSFX;
 	
 	
 	[NonSerialized] public AttackEffectType effectType;
@@ -27,6 +29,7 @@ public class PlayerProjectile : MonoBehaviour
 	{
 		if (collision.CompareTag("Enemy") || collision.CompareTag("Wall"))
 		{
+			SFXManager.instance.PlayClip(hitSFX, transform, 1.0f);
 			StartCoroutine(blastBeforeDeath(lifeBeforeDestroy));
 			impulseSrc.enabled = true;
 			CameraShakeManager.instance.Shake(impulseSrc, knockback / 7.5f);
@@ -43,14 +46,19 @@ public class PlayerProjectile : MonoBehaviour
 		get { return knockback; }
 	}
 
-	public void Init(int damage, float knockForce, float lifetime, Vector2 direction, float speed, float effectDuration, bool charged, AttackEffectType effectType)
+	public void Init(int damage, float knockback, float lifetime, Vector2 direction, float speed, float effectDuration, bool charged, AttackEffectType effectType, AudioClip spawnSFX, AudioClip hitSFX)
 	{
+		SFXManager.instance.PlayClip(spawnSFX, transform, 1.0f);
+
 		if (charged)
 			transform.localScale = Vector3.one * 2.5f;
+
 		this.damage = damage;
-		this.knockback = knockForce;
+		this.knockback = knockback;
 		this.effectType = effectType;
 		this.effectDuration = effectDuration;
+		this.hitSFX = hitSFX;
+
 		rb2d.linearVelocity = direction * speed;
 		Destroy(gameObject, lifetime);
 		atkAnimation.Init(charged);

@@ -17,6 +17,9 @@ MonoBehaviour:
   activeTime: 0.01
   manaCost: 1
   refImage: {fileID: -2220551427859815341, guid: a28cd4c729d005d4bb9135b37384e18b, type: 3}
+  abilityInvokeSFX: {fileID: 8300000, guid: 0bc2fbe61fe0be3439cbfb122ac9363a, type: 3}
+  abilitySpawnSFX: {fileID: 8300000, guid: 8fe4164801e434e49a93227ef2b89e7e, type: 3}
+  abilityLandSFX: {fileID: 8300000, guid: 85a9bcbbdc3b04f48940fc6531995210, type: 3}
   damage: 3
   knockback: 15
   effectType: 0

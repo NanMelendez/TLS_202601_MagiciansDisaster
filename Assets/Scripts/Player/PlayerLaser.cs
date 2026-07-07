@@ -13,6 +13,9 @@ public class PlayerLaser : MonoBehaviour
     private float knockback;
     private bool startedAttack = false;
 
+    private AudioClip hitSFX;
+    private bool firsHit = false;
+
     [NonSerialized] public AttackEffectType effectType;
     [NonSerialized] public float effectDuration;
     [NonSerialized] public PlayerAbilityHotbar atkHotbar;
@@ -42,19 +45,25 @@ public class PlayerLaser : MonoBehaviour
 		}
     }
 
-    public void Init(int damage, float knockForce, PlayerAim pAim, float maxRange, float effectDuration, bool charged, AttackEffectType effectType, PlayerAbilityHotbar atkHotbar)
+    public void Init(int damage, float knockback, PlayerAim pAim, float laserRange, float effectDuration, bool charged, AttackEffectType effectType, PlayerAbilityHotbar atkHotbar, AudioClip spawnSFX, AudioClip hitSFX)
     {
+        SFXManager.instance.PlayClip(spawnSFX, transform, 1.0f);
+
         if (charged)
             transform.localScale = Vector3.one * 2.5f;
+
         this.damage = damage;
-        this.knockback = knockForce;
+        this.knockback = knockback;
         this.effectType = effectType;
         this.effectDuration = effectDuration;
         this.pAim = pAim;
         this.atkHotbar = atkHotbar;
-        this.laserRange = maxRange;
+        this.laserRange = laserRange;
+        this.hitSFX = hitSFX;
 
         startedAttack = true;
+
+        SFXManager.instance.PlayClip(spawnSFX, transform, 1.0f);
     }
 
     private void LaserStuff()
@@ -73,6 +82,12 @@ public class PlayerLaser : MonoBehaviour
             }
 
             impulseSrc.GenerateImpulseAt(hit.point, Vector3.one * 0.1f);
+
+            if (!firsHit)
+            {
+                firsHit = true;
+                SFXManager.instance.PlayClip(hitSFX, transform, 1.0f);
+            }
         }
         else
         {

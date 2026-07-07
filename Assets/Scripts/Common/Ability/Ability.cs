@@ -8,6 +8,10 @@ public class Ability : ScriptableObject
     public float activeTime;
     public int manaCost;
     public Sprite refImage;
+    public AudioClip abilityInvokeSFX;
+    public AudioClip abilitySpawnSFX;
+    public AudioClip abilityLandSFX;
+
 
     public virtual void Activate(GameObject parent, bool charged) { }
 

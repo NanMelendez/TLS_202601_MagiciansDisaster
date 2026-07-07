@@ -17,7 +17,7 @@ public class PlayerAtkRanged : AttackAbility
 		GameObject iProjectile = Instantiate(projectile, parent.transform.position + (Vector3)pAim.Direction * spawnOffset, Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg));
 		
 		PlayerProjectile pp = iProjectile.GetComponent<PlayerProjectile>();
-		pp.Init(damage, knockback, lifetime, pAim.Direction, speed, effectDuration, charged, effectType);
+		pp.Init(damage, knockback, lifetime, pAim.Direction, speed, effectDuration, charged, effectType, abilitySpawnSFX, abilityLandSFX);
 	}
 
 	public override void BeginCooldown(GameObject parent)

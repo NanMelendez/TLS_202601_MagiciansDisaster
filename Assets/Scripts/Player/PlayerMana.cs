@@ -4,6 +4,7 @@ public class PlayerMana : MonoBehaviour
 {
 	[SerializeField] private int maxMana;
 	[SerializeField] private UIStatsHandler statsUI;
+	[SerializeField] private AudioClip manaSFX;
 
 	private int currentMana;
 
@@ -27,14 +28,15 @@ public class PlayerMana : MonoBehaviour
     public void ConsumeMana(int amount)
 	{
 		currentMana = Mathf.Max(currentMana - amount, 0);
-		// Debug.Log($"Mana restante: {100.0f * currentMana / maxMana}%");
 		statsUI.UpdateMana(currentMana, maxMana);
 	}
 
 	public void AcquireMana(int amount)
 	{
+		if (manaSFX)
+			SFXManager.instance.PlayClip(manaSFX, transform, 1.0f);
+
 		currentMana = Mathf.Min(currentMana + amount, maxMana);
-        // Debug.Log($"Mana restante: {100.0f * currentMana / maxMana}%");
         statsUI.UpdateMana(currentMana, maxMana);
     }
 }

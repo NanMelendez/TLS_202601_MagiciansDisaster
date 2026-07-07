@@ -15,6 +15,6 @@ public class PlayerLaserAbility : AttackAbility
 		iLaser.transform.SetParent(parent.transform);
 
 		PlayerLaser pl = iLaser.GetComponent<PlayerLaser>();
-		pl.Init(damage, knockback, pAim, maxRange, effectDuration, charged, effectType, atkHotbar);
+		pl.Init(damage, knockback, pAim, maxRange, effectDuration, charged, effectType, atkHotbar, abilitySpawnSFX, abilityLandSFX);
 	}
 }
