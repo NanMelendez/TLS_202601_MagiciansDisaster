@@ -153,6 +153,7 @@ MonoBehaviour:
   flash: {fileID: 5390418875504450083}
   hbUI: {fileID: 2009332688882533874}
   loot: {fileID: 6825677637811221031}
+  animator: {fileID: 126202736360481820}
 --- !u!114 &7999802160444647231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,6 +168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health
   maxHealth: 0
   hurtCooldown: 0
+  healSFX: {fileID: 0}
+  hurtSFX: {fileID: 0}
 --- !u!114 &5390418875504450083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,6 +471,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9192175594366128122}
   - component: {fileID: 2977906046781495244}
+  - component: {fileID: 126202736360481820}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -539,7 +543,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 7e9067fc5caf03b4cb6af7efdf59ead8, type: 3}
+  m_Sprite: {fileID: -6812798382714016367, guid: 6f0e6d62b52a0e24f8a02a8eea811aa8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -549,6 +553,28 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &126202736360481820
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5303828920263251860}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 57e05f7a89430e7438192ab80df469b2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7663409658908782165
 GameObject:
   m_ObjectHideFlags: 0

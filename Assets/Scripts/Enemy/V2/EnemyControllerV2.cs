@@ -12,6 +12,7 @@ public class EnemyControllerV2 : MonoBehaviour
     [SerializeField] private FlashController flash;
     [SerializeField] private EnemyHealthBarUI hbUI;
     [SerializeField] private EnemyLoot loot;
+    public Animator animator;
 
     private EnemyAtkType attackType;
     private AttackEffectType effectType;

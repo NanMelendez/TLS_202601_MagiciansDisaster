@@ -1821,15 +1821,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0
+      value: 0.15502496
       objectReference: {fileID: 0}
     - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 1
+      value: 0.6903575
       objectReference: {fileID: 0}
     - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 1
+      value: 1.000738
       objectReference: {fileID: 0}
     - target: {fileID: 8742158619987275457, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: BoundingShape2D

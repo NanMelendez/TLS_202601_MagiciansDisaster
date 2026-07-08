@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemyMovementV2 : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D rb2d;
+	[SerializeField] private Rigidbody2D rb2d;
     public EnemyFOVV2 fov;
 
     [NonSerialized] public float speed;
@@ -12,7 +12,9 @@ public class EnemyMovementV2 : MonoBehaviour
     private float directionChangeCooldown = 0.0f;
     private EnemyActionSpot actionOnSpot;
 
-    public Vector2 Direction
+	private static readonly int idleHash = Animator.StringToHash("isIdle");
+
+	public Vector2 Direction
     {
         get { return direction; }
     }
@@ -45,7 +47,6 @@ public class EnemyMovementV2 : MonoBehaviour
     private void FixedUpdate()
     {
         if (controller != null)
-            // Debug.Log($"Is controller null? {controller == null}");
             if (controller.state != EnemyState.KNOCKBACK)
                 SetVelocity();
     }
@@ -88,16 +89,19 @@ public class EnemyMovementV2 : MonoBehaviour
                 case EnemyActionSpot.Retreat:
                     direction *= -1.0f;
                     controller.state = EnemyState.FLEEING;
-                    break;
+					controller.animator.SetBool(idleHash, false);
+					break;
                 default:
                 case EnemyActionSpot.Follow:
                     controller.state = EnemyState.CHASING;
-                    break;
+					controller.animator.SetBool(idleHash, false);
+					break;
             }
         }
         else
         {
             controller.state = EnemyState.IDLE;
+            controller.animator.SetBool(idleHash, true);
         }
     }
 
