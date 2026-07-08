@@ -8,6 +8,7 @@ public class PlayerAbilityHotbar : MonoBehaviour
 	[SerializeField] private PlayerMana mana;
 	[SerializeField] private InputActionReference activator;
 	[SerializeField] private InputActionReference charger;
+	[SerializeField] private List<InputActionReference> hotbarNumbers = new();
 	[SerializeField] private List<Ability> abilities = new();
 	[SerializeField] private UIAbilityHotbar UIHotbar;
 	[SerializeField] private float chargeThreshold;
@@ -66,11 +67,27 @@ public class PlayerAbilityHotbar : MonoBehaviour
 
 	private void Update()
 	{
+		HandleManualSelection();
 		ControlScroll();
+
 		if (charger)
 			ChargeAttackHandler(charger.action.IsPressed());
 		if (activator)
 			UpdateAbilitiesStatus(activator.action.WasPressedThisFrame());
+	}
+
+	private void HandleManualSelection()
+	{
+		for (int i = 0; i < hotbarNumbers.Count; i++)
+		{
+			if (hotbarNumbers[i].action.WasPressedThisFrame())
+			{
+				currentAbilityIdx = i;
+				UIHotbar.UpdateSelection(currentAbilityIdx);
+				chargeTime = 0.0f;
+				SFXManager.instance.PlayClip(abilities[currentAbilityIdx].abilityInvokeSFX, transform, 1.0f);
+			}
+		}
 	}
 
 	private void ControlScroll()
