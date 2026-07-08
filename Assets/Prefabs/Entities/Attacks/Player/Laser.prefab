@@ -48,10 +48,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerLaser
   lineRenderer: {fileID: 3161506709823804209}
-  laserRange: 1
-  wallLayer:
+  evalLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 192
   impulseSrc: {fileID: 4141602363854232873}
 --- !u!114 &2888898933816665736
 MonoBehaviour:

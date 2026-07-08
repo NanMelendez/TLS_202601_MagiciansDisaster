@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerLaser : MonoBehaviour
 {
     [SerializeField] LineRenderer lineRenderer;
-    [SerializeField] private LayerMask wallLayer;
+    [SerializeField] private LayerMask evalLayers;
     [SerializeField] private CinemachineImpulseSource impulseSrc;
 
     private int damage;
@@ -68,7 +68,7 @@ public class PlayerLaser : MonoBehaviour
 
     private void LaserStuff()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, pAim.Direction, laserRange, wallLayer);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, pAim.Direction, laserRange, evalLayers);
 
         lineRenderer.SetPosition(0, transform.position);
 
