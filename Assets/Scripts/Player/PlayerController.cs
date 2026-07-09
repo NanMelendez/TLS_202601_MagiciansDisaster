@@ -60,9 +60,6 @@ public class PlayerController : MonoBehaviour
 			{
 				EnemyAttacker eAtk = collision.gameObject.GetComponent<EnemyAttacker>();
 
-                Debug.Log($"Attacked! -{eAtk.Damage} HP");
-
-                // EnemyController ec = collision.gameObject.GetComponent<EnemyController>();
                 lastHitPos = collision.transform.position;
 
 				TakeDamage(eAtk.Damage, 25.0f, 0.25f, Color.red);
@@ -82,6 +79,28 @@ public class PlayerController : MonoBehaviour
                 TakeDamage(eProj.Damage, eProj.Knockback, 0.25f, Color.red);
             }
         }
+
+		if (collision.CompareTag("Enemy"))
+		{
+			if (health.Cooldown == 0.0f)
+			{
+				EnemyAttacker eAtk = collision.gameObject.GetComponent<EnemyAttacker>();
+
+				lastHitPos = collision.transform.position;
+
+				TakeDamage(eAtk.Damage, 25.0f, 0.25f, Color.red);
+
+				Debug.Log($"{eAtk.effectType}");
+
+				if (eAtk.effectType == AttackEffectType.Slowdown)
+				{
+					Debug.Log("HADA");
+
+					StartCoroutine(SlowDown(2.0f, 0.5f));
+					flash.Flash(Color.lightBlue, 0.5f);
+				}
+			}
+		}
     }
 
     private void CheckState()
@@ -122,6 +141,17 @@ public class PlayerController : MonoBehaviour
 
         yield return new WaitForSeconds(seconds);
 		movement.enabled = true;
+	}
+
+	IEnumerator SlowDown(float seconds, float factor)
+	{
+		float ogSpeed = movement.speed;
+
+		movement.speed *= factor;
+
+		yield return new WaitForSeconds(seconds);
+
+		movement.speed = ogSpeed;
 	}
 
 	private void HandleAnimator()

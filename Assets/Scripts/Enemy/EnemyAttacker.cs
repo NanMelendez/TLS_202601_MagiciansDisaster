@@ -7,7 +7,7 @@ public class EnemyAttacker : MonoBehaviour
     public float rangedInterval = 1.0f;
 
     private int damage;
-    private AttackEffectType effectType;
+    [NonSerialized] public AttackEffectType effectType;
     [NonSerialized] public EnemyAtkType attackType;
     private float rangedCooldown;
 

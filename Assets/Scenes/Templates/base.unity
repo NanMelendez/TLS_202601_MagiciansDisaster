@@ -472,16 +472,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5926074633859811798, guid: a316b23a1d61ce14484c1ab0bc82766d, type: 3}
       propertyPath: instances.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5926074633859811798, guid: a316b23a1d61ce14484c1ab0bc82766d, type: 3}
       propertyPath: 'instances.Array.data[0]'
       value: 
-      objectReference: {fileID: 1425505468207329247, guid: ac4717183deb6ff48abae33987999885, type: 3}
+      objectReference: {fileID: 7941663193400402899, guid: b58746659813f9b4f80cb4d74e575ea4, type: 3}
     - target: {fileID: 5926074633859811798, guid: a316b23a1d61ce14484c1ab0bc82766d, type: 3}
       propertyPath: 'instances.Array.data[1]'
       value: 
       objectReference: {fileID: 427200503449057522, guid: 48399fc671c567a40a24abbc8d9a6eae, type: 3}
+    - target: {fileID: 5926074633859811798, guid: a316b23a1d61ce14484c1ab0bc82766d, type: 3}
+      propertyPath: 'instances.Array.data[2]'
+      value: 
+      objectReference: {fileID: 7941663193400402899, guid: b58746659813f9b4f80cb4d74e575ea4, type: 3}
     - target: {fileID: 6827826085980926067, guid: a316b23a1d61ce14484c1ab0bc82766d, type: 3}
       propertyPath: m_Name
       value: Enemy Spawner V2
@@ -2007,19 +2011,23 @@ PrefabInstance:
       objectReference: {fileID: 944359949}
     - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: orthographic size
-      value: 4.2
+      value: 4.6666665
       objectReference: {fileID: 0}
     - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.12684086
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0.075034104
       objectReference: {fileID: 0}
     - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.7461825
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 1
+      value: 0.85088676
       objectReference: {fileID: 0}
     - target: {fileID: 8742158619987275457, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: BoundingShape2D

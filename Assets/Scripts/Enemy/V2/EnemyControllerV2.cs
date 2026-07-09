@@ -81,6 +81,9 @@ public class EnemyControllerV2 : MonoBehaviour
         movement.Init(this, data.actionOnSpot, data.speed);
         attacker.Init(data.damage, data.effectType, data.attackType, data.rangedAttackInterval);
         destroyAfterSeconds = data.destroyAfterSeconds;
+        attackType = data.attackType;
+        effectType = data.effectType;
+        actionOnSpot = data.actionOnSpot;
         flash.Flash(Color.lavenderBlush, 1.5f);
     }
 
