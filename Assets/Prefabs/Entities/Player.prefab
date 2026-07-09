@@ -5017,6 +5017,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 100
   hurtCooldown: 0.75
+  healSFX: {fileID: 8300000, guid: cba8a5e038a7c1148949e4dd29c1b3ba, type: 3}
+  hurtSFX: {fileID: 8300000, guid: 7c75fe2cd8d6f9e419d78542f1eb2d03, type: 3}
   statsUI: {fileID: 0}
 --- !u!114 &8478675964179521000
 MonoBehaviour:
@@ -5072,6 +5074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMana
   maxMana: 100
   statsUI: {fileID: 0}
+  manaSFX: {fileID: 8300000, guid: 2511c1ef8bfb4ab44b3b4c640e88b7df, type: 3}
 --- !u!114 &8580527357646141192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5087,6 +5090,12 @@ MonoBehaviour:
   mana: {fileID: 8141856140077509747}
   activator: {fileID: -2046310171536246835, guid: c5c8837423788ee45a19bb855722cf56, type: 3}
   charger: {fileID: -6624921261968273137, guid: c5c8837423788ee45a19bb855722cf56, type: 3}
+  hotbarNumbers:
+  - {fileID: 8911430208746566368, guid: c5c8837423788ee45a19bb855722cf56, type: 3}
+  - {fileID: 1099797999494135692, guid: c5c8837423788ee45a19bb855722cf56, type: 3}
+  - {fileID: -3981890661355211596, guid: c5c8837423788ee45a19bb855722cf56, type: 3}
+  - {fileID: 2484011384540249308, guid: c5c8837423788ee45a19bb855722cf56, type: 3}
+  - {fileID: -1662549784151200369, guid: c5c8837423788ee45a19bb855722cf56, type: 3}
   abilities:
   - {fileID: 11400000, guid: 152a9dea8eff6614f87c0648e1397447, type: 2}
   - {fileID: 11400000, guid: 373fd797c593a404bb402885bf8943bd, type: 2}
@@ -5094,7 +5103,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0c911514d1f26dc45a4a282a78583ce0, type: 2}
   - {fileID: 11400000, guid: 4fdd40ac575d88d4394821509c5eb6f4, type: 2}
   UIHotbar: {fileID: 0}
-  chargeThreshold: 5
+  chargeThreshold: 2
   UIHandler: {fileID: 0}
   chargeParticles: {fileID: 4721769812323865238}
   flash: {fileID: 5506495435422998364}
