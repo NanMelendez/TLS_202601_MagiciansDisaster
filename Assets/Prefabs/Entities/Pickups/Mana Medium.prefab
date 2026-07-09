@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7604376538589035077}
   - component: {fileID: 9024575521361922660}
+  - component: {fileID: 2316084647799375588}
   - component: {fileID: 3504474842833681559}
-  - component: {fileID: 8440020564943823301}
   m_Layer: 0
   m_Name: Mana Medium
   m_TagString: Untagged
@@ -62,21 +62,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3504474842833681559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 697093383861917587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aa1acf82efad7c4ba7b2e41c196061d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Pickup
-  data: {fileID: 11400000, guid: e8fa8da46886cb14282cfd50f16b04b1, type: 2}
---- !u!61 &8440020564943823301
-BoxCollider2D:
+--- !u!58 &2316084647799375588
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -110,17 +97,20 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.375, y: 0.345}
-  m_EdgeRadius: 0
+  m_Radius: 0.25
+--- !u!114 &3504474842833681559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697093383861917587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa1acf82efad7c4ba7b2e41c196061d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Pickup
+  data: {fileID: 11400000, guid: e8fa8da46886cb14282cfd50f16b04b1, type: 2}
 --- !u!1 &1529705877979487571
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,10 +190,10 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 16
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 372409541, guid: 1c56c7410335550429b47785ce2317ae, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 2784468965456250579, guid: dea5f42c16b62b64fa58963f6bf0715f, type: 3}
+  m_Color: {r: 0.5707547, g: 0.8680597, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

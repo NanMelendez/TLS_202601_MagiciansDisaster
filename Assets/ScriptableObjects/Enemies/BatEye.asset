@@ -15,10 +15,11 @@ MonoBehaviour:
   health: 50
   hurtCooldown: 0.3
   speed: 5.75
-  destroyAfterSeconds: 1.5
+  destroyAfterSeconds: 0.25
   damage: 15
   attackType: 0
   effectType: 0
   actionOnSpot: 0
+  rangedAttackInterval: 0
   visionAngle: 120
   visionRadius: 5

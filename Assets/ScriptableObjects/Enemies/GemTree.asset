@@ -15,7 +15,7 @@ MonoBehaviour:
   health: 70
   hurtCooldown: 0.75
   speed: 4
-  destroyAfterSeconds: 1.5
+  destroyAfterSeconds: 0.5
   damage: 10
   attackType: 1
   effectType: 0

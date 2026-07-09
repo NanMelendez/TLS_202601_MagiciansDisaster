@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Collectible
   name: BigHealth
   type: 2
-  points: 20
+  points: 50

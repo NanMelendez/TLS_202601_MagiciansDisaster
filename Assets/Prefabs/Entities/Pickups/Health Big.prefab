@@ -79,10 +79,10 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 16
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -355382486172595394, guid: 1c56c7410335550429b47785ce2317ae, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: -5278734259511242463, guid: 490cc4bd54cf53f40801db04dc6739c9, type: 3}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,7 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 672204092272746337}
   - component: {fileID: 4864880019758332433}
-  - component: {fileID: 7267413224545030719}
+  - component: {fileID: -250501165116927934}
   - component: {fileID: 1987049976196341181}
   m_Layer: 0
   m_Name: Health Big
@@ -153,8 +153,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &7267413224545030719
-BoxCollider2D:
+--- !u!58 &-250501165116927934
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -188,17 +188,7 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.375, y: 0.4375}
-  m_EdgeRadius: 0
+  m_Radius: 0.25
 --- !u!114 &1987049976196341181
 MonoBehaviour:
   m_ObjectHideFlags: 0
