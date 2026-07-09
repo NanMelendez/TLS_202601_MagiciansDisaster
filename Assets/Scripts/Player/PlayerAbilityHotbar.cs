@@ -22,6 +22,7 @@ public class PlayerAbilityHotbar : MonoBehaviour
 	private List<float> cooldownTimes = new();
 
 	private float chargeTime;
+	private bool isUsingLaser = false;
 
 	public int CurrentAbilityIdx
 	{
@@ -73,7 +74,12 @@ public class PlayerAbilityHotbar : MonoBehaviour
 		if (charger)
 			ChargeAttackHandler(charger.action.IsPressed());
 		if (activator)
-			UpdateAbilitiesStatus(activator.action.WasPressedThisFrame());
+			UpdateAbilitiesStatus(activator.action.IsPressed());
+	}
+
+	private bool SlotIsLaser(int idx)
+	{
+		return abilities[idx] is PlayerLaserAbility;
 	}
 
 	private void HandleManualSelection()
@@ -124,8 +130,18 @@ public class PlayerAbilityHotbar : MonoBehaviour
             switch (states[i])
             {
                 case AbilityState.READY:
-                    if (activatorBool && i == currentAbilityIdx)
-                        EvalAbilityUsage(i);
+					if (i == currentAbilityIdx)
+					{
+						if (activatorBool)
+						{
+							EvalAbilityUsage(i);
+						}
+						else
+						{
+							if (SlotIsLaser(i) && isUsingLaser)
+								isUsingLaser = false;
+						}
+					}
                     break;
                 case AbilityState.ACTIVE:
                     if (activeTimes[i] > 0)
@@ -151,7 +167,17 @@ public class PlayerAbilityHotbar : MonoBehaviour
 	{
 		if (mana.CurrentMana - abilities[i].manaCost >= 0)
 		{
-			abilities[i].Activate(gameObject, chargeTime >= chargeThreshold);
+			if (SlotIsLaser(i))
+			{
+				if (!isUsingLaser)
+				{
+					isUsingLaser = true;
+					abilities[i].Activate(gameObject, chargeTime >= chargeThreshold); ;
+				}
+			}
+			else
+				abilities[i].Activate(gameObject, chargeTime >= chargeThreshold);
+
 			states[i] = AbilityState.ACTIVE;
 			activeTimes[i] = abilities[i].activeTime;
 			mana.ConsumeMana(abilities[i].manaCost);
@@ -160,7 +186,8 @@ public class PlayerAbilityHotbar : MonoBehaviour
 		}
 		else
 		{
-			// Debug.Log("Not enough mana!");
+			if (SlotIsLaser(i) && isUsingLaser)
+				isUsingLaser = false;
 		}
 	}
 

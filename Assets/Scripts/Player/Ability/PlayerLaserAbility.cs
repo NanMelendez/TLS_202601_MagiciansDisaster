@@ -10,11 +10,12 @@ public class PlayerLaserAbility : AttackAbility
 	{
 		PlayerAim pAim = parent.GetComponent<PlayerAim>();
 		PlayerAbilityHotbar atkHotbar = parent.GetComponent<PlayerAbilityHotbar>();
+		PlayerMana pMana = parent.GetComponent<PlayerMana>();
 
 		GameObject iLaser = Instantiate(laser, parent.transform.position, Quaternion.identity);
 		iLaser.transform.SetParent(parent.transform);
 
 		PlayerLaser pl = iLaser.GetComponent<PlayerLaser>();
-		pl.Init(damage, knockback, pAim, maxRange, effectDuration, charged, effectType, atkHotbar, abilitySpawnSFX, abilityLandSFX);
+		pl.Init(damage, knockback, pAim, maxRange, effectDuration, charged, effectType, atkHotbar, pMana, abilitySpawnSFX, abilityLandSFX);
 	}
 }

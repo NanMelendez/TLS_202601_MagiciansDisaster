@@ -19,6 +19,7 @@ public class PlayerLaser : MonoBehaviour
     [NonSerialized] public AttackEffectType effectType;
     [NonSerialized] public float effectDuration;
     [NonSerialized] public PlayerAbilityHotbar atkHotbar;
+    [NonSerialized] public PlayerMana pMana;
     [NonSerialized] public PlayerAim pAim;
 	[NonSerialized] public float laserRange = 0.01f;
 
@@ -34,7 +35,7 @@ public class PlayerLaser : MonoBehaviour
 
     private void Update()
     {
-        if (!atkHotbar.IsAttacking)
+        if (!atkHotbar.IsAttacking || pMana.CurrentMana <= 0)
         {
             Destroy(gameObject);
         }
@@ -45,7 +46,7 @@ public class PlayerLaser : MonoBehaviour
 		}
     }
 
-    public void Init(int damage, float knockback, PlayerAim pAim, float laserRange, float effectDuration, bool charged, AttackEffectType effectType, PlayerAbilityHotbar atkHotbar, AudioClip spawnSFX, AudioClip hitSFX)
+    public void Init(int damage, float knockback, PlayerAim pAim, float laserRange, float effectDuration, bool charged, AttackEffectType effectType, PlayerAbilityHotbar atkHotbar, PlayerMana pMana, AudioClip spawnSFX, AudioClip hitSFX)
     {
         SFXManager.instance.PlayClip(spawnSFX, transform, 1.0f);
 
@@ -60,6 +61,7 @@ public class PlayerLaser : MonoBehaviour
         this.atkHotbar = atkHotbar;
         this.laserRange = laserRange;
         this.hitSFX = hitSFX;
+        this.pMana = pMana;
 
         startedAttack = true;
 

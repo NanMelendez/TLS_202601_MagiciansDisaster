@@ -1387,14 +1387,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 632795859}
     m_Modifications:
     - target: {fileID: 1236614887801156001, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
-      propertyPath: healSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: cba8a5e038a7c1148949e4dd29c1b3ba, type: 3}
-    - target: {fileID: 1236614887801156001, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
-      propertyPath: hurtSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: 7c75fe2cd8d6f9e419d78542f1eb2d03, type: 3}
-    - target: {fileID: 1236614887801156001, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
       propertyPath: statsUI
       value: 
       objectReference: {fileID: 792484612}
@@ -1439,10 +1431,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8141856140077509747, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
-      propertyPath: manaSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: 2511c1ef8bfb4ab44b3b4c640e88b7df, type: 3}
-    - target: {fileID: 8141856140077509747, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
       propertyPath: statsUI
       value: 
       objectReference: {fileID: 792484612}
@@ -1454,34 +1442,6 @@ PrefabInstance:
       propertyPath: UIHandler
       value: 
       objectReference: {fileID: 792484612}
-    - target: {fileID: 8580527357646141192, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
-      propertyPath: chargeThreshold
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8580527357646141192, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
-      propertyPath: hotbarNumbers.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8580527357646141192, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
-      propertyPath: 'hotbarNumbers.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8911430208746566368, guid: c5c8837423788ee45a19bb855722cf56, type: 3}
-    - target: {fileID: 8580527357646141192, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
-      propertyPath: 'hotbarNumbers.Array.data[1]'
-      value: 
-      objectReference: {fileID: 1099797999494135692, guid: c5c8837423788ee45a19bb855722cf56, type: 3}
-    - target: {fileID: 8580527357646141192, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
-      propertyPath: 'hotbarNumbers.Array.data[2]'
-      value: 
-      objectReference: {fileID: -3981890661355211596, guid: c5c8837423788ee45a19bb855722cf56, type: 3}
-    - target: {fileID: 8580527357646141192, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
-      propertyPath: 'hotbarNumbers.Array.data[3]'
-      value: 
-      objectReference: {fileID: 2484011384540249308, guid: c5c8837423788ee45a19bb855722cf56, type: 3}
-    - target: {fileID: 8580527357646141192, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
-      propertyPath: 'hotbarNumbers.Array.data[4]'
-      value: 
-      objectReference: {fileID: -1662549784151200369, guid: c5c8837423788ee45a19bb855722cf56, type: 3}
     - target: {fileID: 8847441716224455422, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2015,11 +1975,11 @@ PrefabInstance:
       objectReference: {fileID: 944359949}
     - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: orthographic size
-      value: 4.2
+      value: 4.6666665
       objectReference: {fileID: 0}
     - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.13359375
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
@@ -2027,7 +1987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.7324219
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
