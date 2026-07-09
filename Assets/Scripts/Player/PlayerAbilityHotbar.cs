@@ -52,7 +52,7 @@ public class PlayerAbilityHotbar : MonoBehaviour
 
 		UIHotbar.CreateLayout(abilities);
 		UIHotbar.UpdateSelection(currentAbilityIdx);
-    }
+	}
 
 	private void OnEnable()
 	{
@@ -127,9 +127,9 @@ public class PlayerAbilityHotbar : MonoBehaviour
 	{
 		for (int i = 0; i < abilities.Count; i++)
 		{
-            switch (states[i])
-            {
-                case AbilityState.READY:
+			switch (states[i])
+			{
+				case AbilityState.READY:
 					if (i == currentAbilityIdx)
 					{
 						if (activatorBool)
@@ -142,25 +142,25 @@ public class PlayerAbilityHotbar : MonoBehaviour
 								isUsingLaser = false;
 						}
 					}
-                    break;
-                case AbilityState.ACTIVE:
-                    if (activeTimes[i] > 0)
-                        activeTimes[i] -= Time.deltaTime;
-                    else
-                    {
-                        abilities[i].BeginCooldown(gameObject);
-                        states[i] = AbilityState.COOLDOWN;
-                        cooldownTimes[i] = abilities[i].cooldownTime;
-                    }
-                    break;
-                case AbilityState.COOLDOWN:
-                    if (cooldownTimes[i] > 0)
-                        cooldownTimes[i] -= Time.deltaTime;
-                    else
-                        states[i] = AbilityState.READY;
-                    break;
-            }
-        }
+					break;
+				case AbilityState.ACTIVE:
+					if (activeTimes[i] > 0)
+						activeTimes[i] -= Time.deltaTime;
+					else
+					{
+						abilities[i].BeginCooldown(gameObject);
+						states[i] = AbilityState.COOLDOWN;
+						cooldownTimes[i] = abilities[i].cooldownTime;
+					}
+					break;
+				case AbilityState.COOLDOWN:
+					if (cooldownTimes[i] > 0)
+						cooldownTimes[i] -= Time.deltaTime;
+					else
+						states[i] = AbilityState.READY;
+					break;
+			}
+		}
 	}
 
 	private void EvalAbilityUsage(int i)
@@ -202,10 +202,10 @@ public class PlayerAbilityHotbar : MonoBehaviour
 		}
 		else
 		{
-            chargeTime = 0.0f;
+			chargeTime = 0.0f;
 			chargeParticles.SetActive(false);
 			flash.StopTint();
 			flash.StopFlash();
-        }
+		}
 	}
 }
