@@ -44,6 +44,11 @@ public class PlayerAbilityHotbar : MonoBehaviour
 		get { return charger ? charger.action.IsPressed() : false; }
 	}
 
+	public bool HasFinishedCharging
+	{
+        get { return chargeTime >= chargeThreshold; }
+    }
+
 	private void Awake()
 	{
 		states = Enumerable.Repeat(AbilityState.READY, abilities.Count).ToList();
@@ -172,11 +177,11 @@ public class PlayerAbilityHotbar : MonoBehaviour
 				if (!isUsingLaser)
 				{
 					isUsingLaser = true;
-					abilities[i].Activate(gameObject, chargeTime >= chargeThreshold); ;
+					abilities[i].Activate(gameObject, HasFinishedCharging);
 				}
 			}
 			else
-				abilities[i].Activate(gameObject, chargeTime >= chargeThreshold);
+				abilities[i].Activate(gameObject, HasFinishedCharging);
 
 			states[i] = AbilityState.ACTIVE;
 			activeTimes[i] = abilities[i].activeTime;
