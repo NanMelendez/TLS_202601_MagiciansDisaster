@@ -1,3 +1,5 @@
+using System;
+using TMPro;
 using UnityEngine;
 
 public class GameUIManager : MonoBehaviour
@@ -5,6 +7,7 @@ public class GameUIManager : MonoBehaviour
 	[SerializeField] private GameObject gameplayUI;
 	[SerializeField] private GameObject gameplayPausedUI;
 	[SerializeField] private GameObject gameOverUI;
+	[SerializeField] private TextMeshProUGUI timerText;
 
 	private GameplayState state = GameplayState.None;
 
@@ -37,6 +40,14 @@ public class GameUIManager : MonoBehaviour
 					DisableAllUIs();
 					break;
 			}
+		}
+	}
+
+	public float ElapsedTime
+	{
+		set
+		{
+			timerText.text = TimeSpan.FromSeconds(value).ToString("mm\\:ss");
 		}
 	}
 

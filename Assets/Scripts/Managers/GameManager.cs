@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
 	private GameplayState state;
 	private PlayerController pController;
 
+	private float elapsedTime;
+
 	private void Awake()
 	{
 		pController = player.GetComponent<PlayerController>();
@@ -21,6 +23,8 @@ public class GameManager : MonoBehaviour
 		Time.timeScale = 1f;
 		UIManager.State = state;
 		pController.state = state;
+
+		elapsedTime = 0.0f;
 	}
 
 	private void OnEnable()
@@ -35,6 +39,10 @@ public class GameManager : MonoBehaviour
 
 	private void Update()
 	{
+		elapsedTime += Time.deltaTime;
+
+		UIManager.ElapsedTime = elapsedTime;
+
 		if (player)
 		{
 			Health playerHealth = player.GetComponent<Health>();
