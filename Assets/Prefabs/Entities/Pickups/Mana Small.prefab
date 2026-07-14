@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 4724589322778831743}
   - component: {fileID: 4179416074322548439}
   - component: {fileID: 4566595057670116485}
+  - component: {fileID: 465049137899603637}
   m_Layer: 0
   m_Name: Mana Small
   m_TagString: Untagged
@@ -202,3 +203,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pickup
   data: {fileID: 11400000, guid: 05a4a5889c0de594c902ac4e5edacb2d, type: 2}
+--- !u!114 &465049137899603637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6410958969023420375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0afc93b13d74744c99fd4a2852af1aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupChaser
+  radius: 5
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 8

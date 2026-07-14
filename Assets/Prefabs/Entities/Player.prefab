@@ -4847,6 +4847,7 @@ GameObject:
   - component: {fileID: 7160156788180944597}
   - component: {fileID: 2214563724376581330}
   - component: {fileID: 6294523418204115362}
+  - component: {fileID: 7362207489398815226}
   - component: {fileID: 4015071952851868858}
   - component: {fileID: 5506495435422998364}
   - component: {fileID: 1989442114768149440}
@@ -4953,6 +4954,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.4, y: 0.4}
   m_EdgeRadius: 0
+--- !u!114 &7362207489398815226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8847441716224455422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78744c2602b0c984484c6ad61d1021f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParticleOnDeath
 --- !u!114 &4015071952851868858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5003,6 +5016,7 @@ MonoBehaviour:
   destroyAfterSeconds: 2.5
   playerCollider: {fileID: 6294523418204115362}
   spriteAnimator: {fileID: 5736912110462041700}
+  deathParticles: {fileID: 7362207489398815226}
 --- !u!114 &1236614887801156001
 MonoBehaviour:
   m_ObjectHideFlags: 0

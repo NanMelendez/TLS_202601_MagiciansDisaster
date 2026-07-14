@@ -13,8 +13,9 @@ public class EnemyControllerV2 : MonoBehaviour
     [SerializeField] private EnemyHealthBarUI hbUI;
     [SerializeField] private EnemyLoot loot;
     public Animator animator;
+	[SerializeField] private ParticleOnDeath deathParticles;
 
-    private EnemyAtkType attackType;
+	private EnemyAtkType attackType;
     private AttackEffectType effectType;
     private EnemyActionSpot actionOnSpot;
     private bool isAlive = true;
@@ -36,7 +37,9 @@ public class EnemyControllerV2 : MonoBehaviour
             if (spawner)
                 spawner.EnemyDeathSignal(destroyAfterSeconds + 1.0f);
 
-            if (loot)
+			deathParticles.Play();
+
+			if (loot)
                 loot.Drop();
 		}
     }
@@ -72,7 +75,7 @@ public class EnemyControllerV2 : MonoBehaviour
         }
     }
 
-    public void Init(EnemySpawnerV2 spawner = null)
+	public void Init(EnemySpawnerV2 spawner = null)
     {
         this.spawner = spawner;
 

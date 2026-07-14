@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 4864880019758332433}
   - component: {fileID: -250501165116927934}
   - component: {fileID: 1987049976196341181}
+  - component: {fileID: 6799984236885753284}
   m_Layer: 0
   m_Name: Health Big
   m_TagString: Untagged
@@ -202,3 +203,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pickup
   data: {fileID: 11400000, guid: 70321e39f47f7f2429d5ee1f4b087475, type: 2}
+--- !u!114 &6799984236885753284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7902371632787038148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0afc93b13d74744c99fd4a2852af1aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupChaser
+  radius: 5
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  turnSpeed: 0
+  rb2d: {fileID: 0}

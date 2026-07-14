@@ -512,6 +512,7 @@ GameObject:
   - component: {fileID: 893440670674660266}
   - component: {fileID: 5854659659011659070}
   - component: {fileID: 8463431265342221978}
+  - component: {fileID: 5978919926411051979}
   - component: {fileID: 2978660506587117827}
   - component: {fileID: 3284092630208284494}
   - component: {fileID: 8275663790118632231}
@@ -633,6 +634,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShadowPlacer
   distance: 0.5
   scale: {x: 1, y: 1}
+--- !u!114 &5978919926411051979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7941663193400402899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78744c2602b0c984484c6ad61d1021f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParticleOnDeath
 --- !u!114 &2978660506587117827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -654,6 +667,7 @@ MonoBehaviour:
   hbUI: {fileID: 6293543715258117412}
   loot: {fileID: 418160732564652399}
   animator: {fileID: 3760216420995096170}
+  deathParticles: {fileID: 5978919926411051979}
 --- !u!114 &3284092630208284494
 MonoBehaviour:
   m_ObjectHideFlags: 0

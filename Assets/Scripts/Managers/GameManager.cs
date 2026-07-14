@@ -1,7 +1,11 @@
+using System;
+using System.Collections;
+using TMPro;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using static UnityEngine.Rendering.DebugUI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,11 +13,19 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private CinemachineCamera cmCam;
 	[SerializeField] private GameUIManager UIManager;
 	[SerializeField] private InputActionReference pauseAction;
+	[SerializeField] private TextMeshProUGUI elapsedTimeGameOver;
 
 	private GameplayState state;
 	private PlayerController pController;
 
 	private float elapsedTime;
+
+	private bool activeTimer = true;
+
+	public float ElapsedTime
+	{
+		get { return elapsedTime; }
+	}
 
 	private void Awake()
 	{
@@ -39,25 +51,36 @@ public class GameManager : MonoBehaviour
 
 	private void Update()
 	{
-		elapsedTime += Time.deltaTime;
-
 		UIManager.ElapsedTime = elapsedTime;
 
 		if (player)
 		{
+			if (activeTimer)
+				elapsedTime += Time.deltaTime;
+
 			Health playerHealth = player.GetComponent<Health>();
 			if (!playerHealth.IsAlive)
 			{
 				cmCam.Follow = null;
 				state = GameplayState.GameOver;
-				UIManager.State = state;
 				pController.state = state;
+				StartCoroutine(ChangeUIStartAfterGameOver());
+				elapsedTimeGameOver.text = "Sobreviviste: " + TimeSpan.FromSeconds(elapsedTime).ToString("mm\\:ss");
 			}
 		}
 
 		if (pauseAction)
 			if (pauseAction.action.IsPressed())
+			{
 				PauseGame();
+				activeTimer = false;
+			}
+	}
+
+	private IEnumerator ChangeUIStartAfterGameOver()
+	{
+		yield return new WaitForSeconds(pController.destroyAfterSeconds);
+		UIManager.State = state;
 	}
 
 	private void PauseGame()
@@ -74,6 +97,7 @@ public class GameManager : MonoBehaviour
 		UIManager.State = state;
 		pController.state = state;
 		Time.timeScale = 1.0f;
+		activeTimer = true;
 	}
 
 	public void Retry()

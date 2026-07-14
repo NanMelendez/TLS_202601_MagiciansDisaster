@@ -13,9 +13,11 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private PlayerMana mana;
 	[SerializeField] private FlashController flash;
 	[SerializeField] private PlayerAbilityHotbar hotbar;
-	[SerializeField] private float destroyAfterSeconds;
+	public float destroyAfterSeconds;
 	[SerializeField] private BoxCollider2D playerCollider;
 	[SerializeField] private Animator spriteAnimator;
+	[SerializeField] private ParticleOnDeath deathParticles;
+	[SerializeField] private SpriteRenderer spriteRenderer;
 
 
 	[NonSerialized] public GameplayState state;
@@ -43,7 +45,9 @@ public class PlayerController : MonoBehaviour
 		{
 			movement.StopVelocity();
 			playerCollider.enabled = false;
-			Destroy(gameObject, destroyAfterSeconds);
+			deathParticles.Play();
+			// spriteRenderer.enabled = false;
+			Destroy(gameObject);
 			isAlive = false;
 		}
 
