@@ -56,16 +56,18 @@ public class EnemyFOVV2 : Aim
 
 	private void OnDrawGizmos()
 	{
-		Gizmos.color = Color.red;
-		UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, radius);
+#if UNITY_EDITOR
+        Gizmos.color = Color.red;
+        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, radius);
 
-		Vector3 angle01 = DirectionFromAngle(-transform.eulerAngles.z + aimAngle, -angle / 2.0f + 90);
-		Vector3 angle02 = DirectionFromAngle(-transform.eulerAngles.z + aimAngle, angle / 2.0f + 90);
+        Vector3 angle01 = DirectionFromAngle(-transform.eulerAngles.z + aimAngle, -angle / 2.0f + 90);
+        Vector3 angle02 = DirectionFromAngle(-transform.eulerAngles.z + aimAngle, angle / 2.0f + 90);
 
-		Gizmos.color = canSeePlayer ? Color.red : Color.yellow;
-		Gizmos.DrawLine(transform.position, transform.position + angle01 * radius);
-		Gizmos.DrawLine(transform.position, transform.position + angle02 * radius);
-	}
+        Gizmos.color = canSeePlayer ? Color.red : Color.yellow;
+        Gizmos.DrawLine(transform.position, transform.position + angle01 * radius);
+        Gizmos.DrawLine(transform.position, transform.position + angle02 * radius);
+#endif
+    }
 
 	public void Init(float angle, float radius)
 	{

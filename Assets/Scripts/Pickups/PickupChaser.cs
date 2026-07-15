@@ -16,9 +16,11 @@ public class PickupChaser : MonoBehaviour
 
 	private void OnDrawGizmos()
 	{
-		Gizmos.color = Color.yellow;
-		UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, radius);
-	}
+#if UNITY_EDITOR
+        Gizmos.color = Color.yellow;
+        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, radius);
+#endif
+    }
 
 	private void Update()
 	{

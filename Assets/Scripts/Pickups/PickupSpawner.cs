@@ -34,9 +34,11 @@ public class PickupSpawner : MonoBehaviour
 
 	private void OnDrawGizmos()
 	{
-		UnityEditor.Handles.color = Color.limeGreen;
-		UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, radius);
-	}
+#if UNITY_EDITOR
+        UnityEditor.Handles.color = Color.limeGreen;
+        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, radius);
+#endif
+    }
 
 	public void PickedUpSignal(float delay)
 	{
