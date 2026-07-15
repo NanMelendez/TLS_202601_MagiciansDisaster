@@ -414,6 +414,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2619668039338352406, guid: a316b23a1d61ce14484c1ab0bc82766d, type: 3}
   m_PrefabInstance: {fileID: 487696142}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &538434194 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7698378472688096253, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
+  m_PrefabInstance: {fileID: 7813375560745754292}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &586409818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1742,6 +1747,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2055858128}
     - target: {fileID: 8894359046180288976, guid: 6de596d30612cb44fa5f32260ff11d73, type: 3}
+      propertyPath: manualPanel
+      value: 
+      objectReference: {fileID: 538434194}
+    - target: {fileID: 8894359046180288976, guid: 6de596d30612cb44fa5f32260ff11d73, type: 3}
       propertyPath: elapsedTimeGameOver
       value: 
       objectReference: {fileID: 801293182}
@@ -1967,6 +1976,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5563745763500981366}
+    - target: {fileID: 1880581016654080591, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5563745763500981366}
+    - target: {fileID: 3621650698096260577, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5563745763500981366}
     - target: {fileID: 3840692662026516527, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2123,7 +2140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.17594256
+      value: 0.0984375
       objectReference: {fileID: 0}
     - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
@@ -2131,7 +2148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.64760196
+      value: 0.80357146
       objectReference: {fileID: 0}
     - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: m_NormalizedViewPortRect.height

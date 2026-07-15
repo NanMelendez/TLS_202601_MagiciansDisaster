@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private GameUIManager UIManager;
 	[SerializeField] private InputActionReference pauseAction;
 	[SerializeField] private TextMeshProUGUI elapsedTimeGameOver;
+	[SerializeField] private GameObject manualPanel;
 
 	private GameplayState state;
 	private PlayerController pController;
@@ -37,6 +38,8 @@ public class GameManager : MonoBehaviour
 		pController.state = state;
 
 		elapsedTime = 0.0f;
+
+		manualPanel.SetActive(false);
 	}
 
 	private void OnEnable()
@@ -108,5 +111,15 @@ public class GameManager : MonoBehaviour
 	public void GoToMenu()
 	{
 		SceneManager.LoadScene("Menu");
+	}
+
+	public void ShowManual()
+	{
+		manualPanel.SetActive(true);
+	}
+
+	public void HideManual()
+	{
+		manualPanel.SetActive(false);
 	}
 }
