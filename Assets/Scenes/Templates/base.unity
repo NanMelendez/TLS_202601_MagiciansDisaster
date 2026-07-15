@@ -998,11 +998,11 @@ PrefabInstance:
       objectReference: {fileID: 1787139079}
     - target: {fileID: 4360640058699222440, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
       propertyPath: spawnLimit
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4360640058699222440, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
       propertyPath: spawnInterval
-      value: 1
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4999858765308179015, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
       propertyPath: m_LocalScale.x
@@ -1434,11 +1434,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4360640058699222440, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
       propertyPath: spawnLimit
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4360640058699222440, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
       propertyPath: spawnInterval
-      value: 1
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4360640058699222440, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
       propertyPath: instances.Array.size
@@ -1554,6 +1554,10 @@ PrefabInstance:
       propertyPath: statsUI
       value: 
       objectReference: {fileID: 792484612}
+    - target: {fileID: 8478675964179521000, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
+      propertyPath: speed
+      value: 4.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8580527357646141192, guid: 243044b6d414f914e969488518e0f0a2, type: 3}
       propertyPath: UIHotbar
       value: 
