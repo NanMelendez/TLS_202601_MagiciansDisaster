@@ -948,22 +948,6 @@ PrefabInstance:
       propertyPath: anchor
       value: 
       objectReference: {fileID: 1787139079}
-    - target: {fileID: 4360640058699222440, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
-      propertyPath: radius
-      value: 3.83
-      objectReference: {fileID: 0}
-    - target: {fileID: 4360640058699222440, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
-      propertyPath: spawnLimit
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4360640058699222440, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
-      propertyPath: instances.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4360640058699222440, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
-      propertyPath: 'instances.Array.data[0]'
-      value: 
-      objectReference: {fileID: 7902371632787038148, guid: b964c136e29d7e647aa8ca0fff482777, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1831,10 +1815,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5563745763500981366}
-    - target: {fileID: 1840119385215168419, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3840692662026516527, guid: b28fa808cc2bf9b40ba288094ce18bed, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1991,7 +1971,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0
+      value: 0.09861933
       objectReference: {fileID: 0}
     - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
@@ -1999,7 +1979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 1
+      value: 0.8030431
       objectReference: {fileID: 0}
     - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: m_NormalizedViewPortRect.height

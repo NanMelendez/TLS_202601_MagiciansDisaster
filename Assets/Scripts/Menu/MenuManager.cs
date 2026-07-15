@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
 	[SerializeField] private GameObject manual;
+	[SerializeField] private GameObject credits;
 
 	private void Awake()
 	{
@@ -19,6 +20,16 @@ public class MenuManager : MonoBehaviour
 	public void HideManual()
 	{
 		manual.SetActive(false);
+	}
+
+	public void ShowCredits()
+	{
+		credits.SetActive(true);
+	}
+
+	public void HideCredits()
+	{
+		credits.SetActive(false);
 	}
 
 	public void Exit()
