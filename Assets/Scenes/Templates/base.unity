@@ -948,6 +948,14 @@ PrefabInstance:
       propertyPath: anchor
       value: 
       objectReference: {fileID: 1787139079}
+    - target: {fileID: 4360640058699222440, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
+      propertyPath: spawnLimit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4360640058699222440, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
+      propertyPath: spawnInterval
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1330,11 +1338,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4360640058699222440, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
       propertyPath: spawnLimit
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4360640058699222440, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
       propertyPath: spawnInterval
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4360640058699222440, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
       propertyPath: instances.Array.size
@@ -1971,7 +1979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.09861933
+      value: 0.17594256
       objectReference: {fileID: 0}
     - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
@@ -1979,7 +1987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.8030431
+      value: 0.64760196
       objectReference: {fileID: 0}
     - target: {fileID: 6372550502917433846, guid: 01f758626f5ead74e825396468d572b9, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
