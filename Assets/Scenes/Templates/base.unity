@@ -183,6 +183,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5092056569005122309, guid: a316b23a1d61ce14484c1ab0bc82766d, type: 3}
+      propertyPath: simulationSpeed
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092056569005122309, guid: a316b23a1d61ce14484c1ab0bc82766d, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5926074633859811798, guid: a316b23a1d61ce14484c1ab0bc82766d, type: 3}
       propertyPath: limit
       value: 5
@@ -372,6 +380,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5092056569005122309, guid: a316b23a1d61ce14484c1ab0bc82766d, type: 3}
+      propertyPath: lengthInSec
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092056569005122309, guid: a316b23a1d61ce14484c1ab0bc82766d, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092056569005122309, guid: a316b23a1d61ce14484c1ab0bc82766d, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092056569005122309, guid: a316b23a1d61ce14484c1ab0bc82766d, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5926074633859811798, guid: a316b23a1d61ce14484c1ab0bc82766d, type: 3}
       propertyPath: anchor
       value: 
@@ -437,6 +461,18 @@ PrefabInstance:
     - target: {fileID: 2619668039338352406, guid: a316b23a1d61ce14484c1ab0bc82766d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092056569005122309, guid: a316b23a1d61ce14484c1ab0bc82766d, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092056569005122309, guid: a316b23a1d61ce14484c1ab0bc82766d, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092056569005122309, guid: a316b23a1d61ce14484c1ab0bc82766d, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5926074633859811798, guid: a316b23a1d61ce14484c1ab0bc82766d, type: 3}
       propertyPath: limit
@@ -1582,6 +1618,22 @@ PrefabInstance:
     - target: {fileID: 2619668039338352406, guid: a316b23a1d61ce14484c1ab0bc82766d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092056569005122309, guid: a316b23a1d61ce14484c1ab0bc82766d, type: 3}
+      propertyPath: simulationSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092056569005122309, guid: a316b23a1d61ce14484c1ab0bc82766d, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092056569005122309, guid: a316b23a1d61ce14484c1ab0bc82766d, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092056569005122309, guid: a316b23a1d61ce14484c1ab0bc82766d, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5926074633859811798, guid: a316b23a1d61ce14484c1ab0bc82766d, type: 3}
       propertyPath: limit
