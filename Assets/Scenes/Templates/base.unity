@@ -944,6 +944,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1432733216934380586, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
+      propertyPath: simulationSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432733216934380586, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432733216934380586, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4360640058699222440, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
       propertyPath: anchor
       value: 
@@ -956,6 +968,26 @@ PrefabInstance:
       propertyPath: spawnInterval
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4999858765308179015, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999858765308179015, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999858765308179015, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999858765308179015, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525081158798289892, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7044550996349193911, guid: 356f3adca9f59534598460422bfb95b0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1328,6 +1360,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1432733216934380586, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
+      propertyPath: lengthInSec
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432733216934380586, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
+      propertyPath: simulationSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432733216934380586, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432733216934380586, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432733216934380586, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432733216934380586, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1432733216934380586, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4360640058699222440, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
       propertyPath: anchor
       value: 
@@ -1356,6 +1416,34 @@ PrefabInstance:
       propertyPath: 'instances.Array.data[1]'
       value: 
       objectReference: {fileID: 5065045135709578060, guid: 4458d3f88de360749bc7193dd96eec53, type: 3}
+    - target: {fileID: 4999858765308179015, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999858765308179015, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999858765308179015, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999858765308179015, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525081158798289892, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7044550996349193911, guid: 356f3adca9f59534598460422bfb95b0, type: 3}
+    - target: {fileID: 6525081158798289892, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
+      propertyPath: m_DrawMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525081158798289892, guid: ee07fe67ee0e42e498066ac0f49de0f5, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
