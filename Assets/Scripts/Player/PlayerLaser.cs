@@ -23,7 +23,10 @@ public class PlayerLaser : MonoBehaviour
     [NonSerialized] public PlayerAim pAim;
 	[NonSerialized] public float laserRange = 0.01f;
 
-	public int Damage
+    private float spawnVolume = 0.5f;
+    private float hitVolume = 0.5f;
+
+    public int Damage
     {
         get { return damage; }
     }
@@ -48,7 +51,7 @@ public class PlayerLaser : MonoBehaviour
 
     public void Init(int damage, float knockback, PlayerAim pAim, float laserRange, float effectDuration, bool charged, AttackEffectType effectType, PlayerAbilityHotbar atkHotbar, PlayerMana pMana, AudioClip spawnSFX, AudioClip hitSFX)
     {
-        SFXManager.instance.PlayClip(spawnSFX, transform, 1.0f);
+        SFXManager.instance.PlayClip(spawnSFX, transform, spawnVolume);
 
         if (charged)
             transform.localScale = Vector3.one * 2.5f;
@@ -88,7 +91,7 @@ public class PlayerLaser : MonoBehaviour
             if (!firsHit)
             {
                 firsHit = true;
-                SFXManager.instance.PlayClip(hitSFX, transform, 1.0f);
+                SFXManager.instance.PlayClip(hitSFX, transform, hitVolume);
             }
         }
         else

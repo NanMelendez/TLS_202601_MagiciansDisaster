@@ -15,6 +15,9 @@ public class PlayerProjectile : MonoBehaviour
 	private float knockback;
 
 	private AudioClip hitSFX;
+
+	private float spawnVolume = 0.5f;
+	private float hitVolume = 0.5f;
 	
 	
 	[NonSerialized] public AttackEffectType effectType;
@@ -29,7 +32,7 @@ public class PlayerProjectile : MonoBehaviour
 	{
 		if (collision.CompareTag("Enemy") || collision.CompareTag("Wall"))
 		{
-			SFXManager.instance.PlayClip(hitSFX, transform, 1.0f);
+			SFXManager.instance.PlayClip(hitSFX, transform, hitVolume);
 			StartCoroutine(blastBeforeDeath(lifeBeforeDestroy));
 			impulseSrc.enabled = true;
 			CameraShakeManager.instance.Shake(impulseSrc, knockback / 7.5f);
@@ -48,7 +51,7 @@ public class PlayerProjectile : MonoBehaviour
 
 	public void Init(int damage, float knockback, float lifetime, Vector2 direction, float speed, float effectDuration, bool charged, AttackEffectType effectType, AudioClip spawnSFX, AudioClip hitSFX)
 	{
-		SFXManager.instance.PlayClip(spawnSFX, transform, 1.0f);
+		SFXManager.instance.PlayClip(spawnSFX, transform, spawnVolume);
 
 		if (charged)
 			transform.localScale = Vector3.one * 2.5f;

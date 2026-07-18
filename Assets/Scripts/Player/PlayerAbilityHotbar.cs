@@ -23,6 +23,7 @@ public class PlayerAbilityHotbar : MonoBehaviour
 
 	private float chargeTime;
 	private bool isUsingLaser = false;
+	private float selectVolume = 0.625f;
 
 	public int CurrentAbilityIdx
 	{
@@ -96,7 +97,7 @@ public class PlayerAbilityHotbar : MonoBehaviour
 				currentAbilityIdx = i;
 				UIHotbar.UpdateSelection(currentAbilityIdx);
 				chargeTime = 0.0f;
-				SFXManager.instance.PlayClip(abilities[currentAbilityIdx].abilityInvokeSFX, transform, 1.0f);
+				SFXManager.instance.PlayClip(abilities[currentAbilityIdx].abilityInvokeSFX, transform, selectVolume);
 			}
 		}
 	}
@@ -123,7 +124,7 @@ public class PlayerAbilityHotbar : MonoBehaviour
 
 		if (scrollY != 0.0f)
 		{
-			SFXManager.instance.PlayClip(abilities[currentAbilityIdx].abilityInvokeSFX, transform, 1.0f);
+			SFXManager.instance.PlayClip(abilities[currentAbilityIdx].abilityInvokeSFX, transform, selectVolume);
 			UIHotbar.UpdateSelection(currentAbilityIdx);
 		}
 	}
